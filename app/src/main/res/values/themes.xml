@@ -53,7 +53,14 @@
         <item name="android:windowMinWidthMinor">90%</item>
     </style>
 
-
+    <style name="Theme.PickerTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryDark">@color/purple_500</item>
+        <item name="colorAccent">@color/purple_700</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="toolbarStyle">@style/ToolbarTheme</item>
+        <item name="android:editTextColor">@android:color/white</item>
+    </style>
 
     <!--bottom_sheet-->
 

@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fake_post.TweeterPostActivity">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:paddingHorizontal="@dimen/_10dp">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/HeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tweet_generator" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:cardCornerRadius="@dimen/_10dp"-->
+            <!--                app:cardElevation="@dimen/_10dp">-->
+
+            <LinearLayout
+                android:id="@+id/lPreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1dp"
+                    android:background="@color/grey" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_20dp"
+                    android:elevation="@dimen/_10dp"
+                    android:padding="@dimen/_10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_user"
+                        android:layout_width="@dimen/_45dp"
+                        android:layout_height="@dimen/_45dp"
+                        android:padding="@dimen/_2dp"
+                        android:src="@drawable/ic_user_insta_placeholder" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/img_user"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/_10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:id="@+id/lUser"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toStartOf="@+id/imgMore"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/lUserName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/imgEditName"
+                                            android:layout_width="@dimen/_20dp"
+                                            android:layout_height="@dimen/_15dp"
+                                            android:layout_gravity="center_vertical"
+                                            android:src="@drawable/ic_edit_post" />
+
+                                        <TextView
+                                            android:id="@+id/txtName"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:text="Anna Marina"
+                                            android:textColor="@color/tweet_black_11"
+                                            android:textSize="@dimen/_16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/imgVerified"
+                                            android:layout_width="@dimen/_20dp"
+                                            android:layout_height="@dimen/_20dp"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginStart="@dimen/_5dp"
+                                            android:src="@drawable/ic_tweeter_verify"
+                                            android:visibility="gone" />
+
+                                        <TextView
+                                            android:id="@+id/txtUserName"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="@dimen/_22dp"
+                                            android:layout_marginStart="@dimen/_7dp"
+                                            android:ellipsize="end"
+                                            android:layout_gravity="center_vertical"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:text="annamarina"
+                                            android:textColor="@color/tweet_light_grey"
+                                            android:textSize="@dimen/_14sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/lTime"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_toStartOf="@+id/imgMore"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/txtTime"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginStart="@dimen/_7dp"
+                                            android:fontFamily="@font/arial_regular"
+                                            android:maxLength="30"
+                                            android:text=" · 1s"
+                                            android:textColor="@color/tweet_light_grey"
+                                            android:textSize="@dimen/_13sp" />
+
+                                        <ImageView
+                                            android:id="@+id/imgEditTime"
+                                            android:layout_width="@dimen/_20dp"
+                                            android:layout_height="@dimen/_15dp"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginStart="@dimen/_5dp"
+                                            android:src="@drawable/ic_edit_post" />
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/imgMore"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/lUser"
+                                    android:layout_alignBottom="@id/lUser"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/ic_more"
+                                    app:tint="@color/tweet_light_grey" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imgEditDesc"
+                                    android:layout_width="@dimen/_20dp"
+                                    android:layout_height="@dimen/_15dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/ic_edit_post" />
+
+                                <com.tylersuehr.socialtextview.SocialTextView
+                                    android:id="@+id/txtDescText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:text="This is a sample tweet. @mentions, #hashtags, https://links.com are all automatically converted."
+                                    android:textColor="@color/tweet_black"
+                                    android:textSize="@dimen/_16sp"
+                                    app:hashtagColor="@color/tweet_link_color"
+                                    app:mentionColor="@color/tweet_link_color"
+                                    app:urlColor="@color/tweet_link_color" />
+                                <!--android:fontFamily="@font/cantarell_regular"-->
+                                <!-- android:fontFamily="@font/segoe_ui"-->
+                            </LinearLayout>
+
+
+                            <!--                                                    <ImageView-->
+                            <!--                                                        android:id="@+id/imgPost"-->
+                            <!--                                                        android:layout_width="match_parent"-->
+                            <!--                                                        android:layout_height="match_parent"-->
+                            <!--                                                        android:scaleType="centerCrop"-->
+                            <!--                                                  />-->
+                            <!--android:src="@drawable/ic_insta_post_placeholder"-->
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_200dp"
+                                android:layout_marginTop="@dimen/_10dp"
+                                android:visibility="visible"
+                                app:cardCornerRadius="@dimen/_10dp"
+                                app:cardElevation="@dimen/_0dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/lImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bg_tweet_image"
+                                    android:padding="@dimen/_1dp">
+
+                                    <!--1-->
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:id="@+id/imgPost1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:visibility="gone" />
+                                    <!--2-->
+                                    <LinearLayout
+                                        android:id="@+id/lImageSecond"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:id="@+id/imgSecond1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginEnd="@dimen/_1dp"
+                                            android:layout_weight="1"
+                                            android:scaleType="centerCrop" />
+
+                                        <ImageView
+                                            android:id="@+id/imgSecond2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="@dimen/_1dp"
+                                            android:layout_weight="1"
+                                            android:scaleType="centerCrop" />
+
+                                    </LinearLayout>
+                                    <!--3-->
+                                    <LinearLayout
+                                        android:id="@+id/lImageThird"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:visibility="gone">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginEnd="@dimen/_1dp"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/imgThird1"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginBottom="@dimen/_1dp"
+                                                android:layout_weight="1"
+                                                android:scaleType="centerCrop" />
+
+                                            <ImageView
+                                                android:id="@+id/imgThird2"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginTop="@dimen/_1dp"
+                                                android:layout_weight="1"
+                                                android:scaleType="centerCrop" />
+                                        </LinearLayout>
+
+                                        <ImageView
+                                            android:id="@+id/imgThird3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="@dimen/_1dp"
+                                            android:layout_weight="1"
+                                            android:scaleType="centerCrop" />
+
+
+                                    </LinearLayout>
+                                    <!--4-->
+                                    <LinearLayout
+                                        android:id="@+id/lImageForth"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:visibility="gone">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginEnd="@dimen/_1dp"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/imgForth1"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginBottom="@dimen/_1dp"
+                                                android:layout_weight="1"
+                                                android:scaleType="centerCrop" />
+
+                                            <ImageView
+                                                android:id="@+id/imgForth2"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginTop="@dimen/_1dp"
+                                                android:layout_weight="1"
+                                                android:scaleType="centerCrop" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="@dimen/_1dp"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:id="@+id/imgForth3"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginBottom="@dimen/_1dp"
+                                                android:layout_weight="1"
+                                                android:scaleType="centerCrop" />
+
+                                            <ImageView
+                                                android:id="@+id/imgForth4"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginTop="@dimen/_1dp"
+                                                android:layout_weight="1"
+                                                android:scaleType="centerCrop" />
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+                                <!-- app:shapeAppearanceOverlay="@style/RoundImage.8"-->
+                            </androidx.cardview.widget.CardView>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_10dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_20dp"
+                                        android:layout_height="@dimen/_20dp"
+                                        android:src="@drawable/ic_tweet_comment"
+                                        app:tint="@color/tweet_light_grey" />
+
+                                    <TextView
+                                        android:id="@+id/txtCommentCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_regular"
+                                        android:maxLength="4"
+                                        android:paddingStart="@dimen/_5dp"
+                                        android:textColor="@color/tweet_light_grey"
+                                        android:textSize="@dimen/_12sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_20dp"
+                                        android:layout_height="@dimen/_20dp"
+                                        android:src="@drawable/ic_retweet"
+                                        app:tint="@color/tweet_light_grey" />
+
+                                    <TextView
+                                        android:id="@+id/txtRetweetCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_regular"
+                                        android:paddingStart="@dimen/_5dp"
+                                        android:textColor="@color/tweet_dark_grey"
+                                        android:textSize="@dimen/_12sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_20dp"
+                                        android:layout_height="@dimen/_20dp"
+                                        android:src="@drawable/ic_tweet_like"
+                                        app:tint="@color/tweet_dark_grey" />
+
+                                    <TextView
+                                        android:id="@+id/txtLikeCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_regular"
+                                        android:paddingStart="@dimen/_5dp"
+                                        android:textColor="@color/tweet_light_grey"
+                                        android:textSize="@dimen/_12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_20dp"
+                                        android:layout_height="@dimen/_20dp"
+                                        android:src="@drawable/ic_tweet_views"
+                                        app:tint="@color/tweet_light_grey" />
+
+                                    <TextView
+                                        android:id="@+id/txtViewCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_regular"
+                                        android:paddingStart="@dimen/_5dp"
+                                        android:textColor="@color/tweet_light_grey"
+                                        android:textSize="@dimen/_12sp" />
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/imgShare"
+                                    android:layout_width="@dimen/_20dp"
+                                    android:layout_height="@dimen/_20dp"
+                                    android:src="@drawable/ic_tweet_share"
+                                    app:tint="@color/tweet_light_grey" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1dp"
+                    android:background="@color/grey" />
+            </LinearLayout>
+
+            <!--            </androidx.cardview.widget.CardView>-->
+
+
+            <LinearLayout
+                android:id="@+id/llEdit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_20dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_15dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/txtPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLength="30"
+                    android:text="@string/post"
+                    android:textColor="@color/edt_text_color"
+                    android:textSize="@dimen/_18sp" />
+
+                <RadioGroup
+                    android:id="@+id/rgPostAs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rdImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:button="@null"
+                        android:drawableStart="@drawable/ic_radio_btn"
+                        android:drawablePadding="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/photo"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rdText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20dp"
+                        android:background="@color/transparent"
+                        android:button="@null"
+                        android:drawableStart="@drawable/ic_radio_btn"
+                        android:drawablePadding="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/text_"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rdImageText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20dp"
+                        android:background="@color/transparent"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawableStart="@drawable/ic_radio_btn"
+                        android:drawablePadding="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Image and Text"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_18sp" />
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp">
+
+                    <CheckBox
+                        android:id="@+id/checkboxVerify"
+                        android:layout_width="20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:background="@drawable/ic_checkbox"
+                        android:button="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/is_verify"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_17sp" />
+
+                    <!--android:text="@string/is_verify"-->
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@string/reply_count"
+                            android:textColor="@color/edt_text_color" />
+
+                        <EditText
+                            android:id="@+id/etCommentCount"
+                            style="@style/CardShapeEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5dp"
+                            android:clipToPadding="false"
+                            android:maxLength="4"
+                            android:inputType="number"
+                            android:paddingHorizontal="@dimen/_5dp"
+                            android:paddingVertical="@dimen/_10dp"
+                            android:textColor="@color/et_text_color"
+                            android:textSize="@dimen/_16sp" />
+
+                        <!--                        <com.google.android.material.textfield.TextInputLayout-->
+                        <!--                            android:id="@+id/inputCommentCount"-->
+                        <!--                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            -->
+                        <!--                            android:layout_weight="1"-->
+                        <!--                            android:hint="@string/reply_count"-->
+                        <!--                            android:textColorHint="@color/grey"-->
+                        <!--                            app:boxCornerRadiusBottomEnd="@dimen/_10dp"-->
+                        <!--                            app:boxCornerRadiusBottomStart="@dimen/_10dp"-->
+                        <!--                            app:boxCornerRadiusTopEnd="@dimen/_10dp"-->
+                        <!--                            app:boxCornerRadiusTopStart="@dimen/_10dp"-->
+                        <!--                            app:hintTextAppearance="@style/TittleEditText">-->
+
+                        <!--                            <com.google.android.material.textfield.TextInputEditText-->
+                        <!--                                android:id="@+id/etCommentCount"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:fontFamily="@font/roboto_medium"-->
+                        <!--                                android:inputType="number"-->
+
+
+                        <!--                                />-->
+
+                        <!--                        </com.google.android.material.textfield.TextInputLayout>-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@string/tweet_count"
+                            android:textColor="@color/edt_text_color"
+                            android:textSize="@dimen/_16sp" />
+
+                        <EditText
+                            android:id="@+id/etRetweetCount"
+                            style="@style/CardShapeEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5dp"
+                            android:clipToPadding="false"
+                            android:maxLength="4"
+                            android:inputType="number"
+                            android:paddingHorizontal="@dimen/_5dp"
+                            android:paddingVertical="@dimen/_10dp"
+                            android:textColor="@color/et_text_color"
+                            android:textSize="@dimen/_16sp" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@string/like_count"
+                            android:textColor="@color/edt_text_color"
+                            android:textSize="@dimen/_16sp" />
+
+                        <EditText
+                            android:id="@+id/etLikeCount"
+                            style="@style/CardShapeEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5dp"
+                            android:maxLength="4"
+                            android:inputType="number"
+                            android:paddingHorizontal="@dimen/_5dp"
+                            android:paddingVertical="@dimen/_10dp"
+                            android:textColor="@color/et_text_color"
+                            android:textSize="@dimen/_16sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@string/view_count"
+                            android:textColor="@color/edt_text_color"
+                            android:textSize="@dimen/_16sp" />
+
+                        <EditText
+                            android:id="@+id/etViewCount"
+                            style="@style/CardShapeEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5dp"
+                            android:clipToPadding="false"
+                            android:maxLength="4"
+                            android:inputType="number"
+                            android:paddingHorizontal="@dimen/_5dp"
+                            android:paddingVertical="@dimen/_10dp"
+                            android:textColor="@color/et_text_color"
+                            android:textSize="@dimen/_16sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rdGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_20dp">
+
+                <RadioButton
+                    android:id="@+id/rdEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableStart="@drawable/ic_radio_btn"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/edit_mode"
+                    android:textColor="@color/tweet_black" />
+
+                <RadioButton
+                    android:id="@+id/rdView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20dp"
+                    android:background="@color/transparent"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_radio_btn"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/view_mode"
+                    android:textColor="@color/tweet_black" />
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnShare"
+                style="@style/FullButton"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/share"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>
