@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <declare-styleable name="AspectImageView">
+        <attr name="aspectRatio" format="float" />
+        <attr name="aspectRatioEnabled" format="boolean" />
+        <attr name="dominantMeasurement">
+            <enum name="width" value="0" />
+            <enum name="height" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CreditCardEditText">
+        <attr name="separator" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="outerShadowRadius" format="dimension" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="strokeMiter" format="dimension" />
+        <attr name="strokeColor" format="color" />
+        <attr name="strokeJoinStyle">
+            <enum name="miter" value="0" />
+            <enum name="bevel" value="1" />
+            <enum name="round" value="2" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="AMTabView">
+        <attr name="tabColor" format="color" />
+        <attr name="ballColor" format="color" />
+        <attr name="selectedTabTintColor" format="color" />
+        <attr name="unSelectedTabTintColor" format="color" />
+    </declare-styleable>
+</resources>

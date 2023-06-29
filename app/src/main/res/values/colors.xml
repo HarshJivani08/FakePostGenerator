@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="grey">#CFD1D8</color>
+    <color name="edt_text_color">#353535</color>
+    <color name="et_text_color">#F3A5A6AA</color>
+    <color name="editetect_shadow_color">#4D000000</color>
+    <color name="blue">#1F00DE</color>
+    <color name="transparent">#00000000</color>
+    <color name="sky_color">#6ECFF5</color>
+    <color name="transparent_black">#59000000</color>
+    <color name="black_21">#212121</color>
+    <color name="light_sky">#1A6BC9CD</color>
+    <color name="reg_text">#424242</color>
+    <color name="solid_33">#40B8D4</color>
+    <color name="grey_66">#666666</color>
+    <color name="light_sky_color">#F3FAFA</color>
+    <color name="black_35">#353535</color>
+    <color name="solid_36">#212121</color>
+    <color name="grey_ed">#EDEDED</color>
+    <color name="google_ads_outline_">#DFF4F5</color>
+    <color name="trans_white">#80ffffff</color>
+
+
+
+    <!--instaGram-->
+    <color name="inst_link_color">#00376B</color>
+    <color name="inst_reg_text_color">#616161</color>
+    <color name="insta_text_color">#0E1111</color>
+    <color name="insta_image_count_color">#F9F9F9</color>
+    <color name="insta_light_grey_text">#666874</color>
+    <color name="insta_grey_text">#808080</color>
+    <!--tweeter-->
+    <color name="tweet_light_grey">#666874</color>
+    <color name="tweet_dark_grey">#657786</color>
+    <color name="tweet_black">#353535</color>
+    <color name="tweet_black_11">#0E1111</color>
+    <color name="tweet_link_color">#3A92FF</color>
+    <!--whatsapp-->
+    <color name="whatsapp_header_color">#008069</color>
+    <color name="whatsapp_header_ios_color">#F7F7F7</color>
+    <color name="whatsapp_ios_txt_color">#2C2C2C</color>
+    <color name="msg_txt_color">#2C2C2C</color>
+    <color name="whatsapp_ios_icon_color">#61A1FD</color>
+    <color name="sender_bg_color">#C2FFF0</color>
+    <color name="whatsapp_hint_color">#969696</color>
+    <color name="bottom_et_hint_color">#6C7275</color>
+    <color name="whatsapp_seen_tick_color">#43A5EE</color>
+    <color name="whatsapp_unseen_tick_color">#B3666666</color>
+    <color name="whatsapp_header_view_ios_color">#A4A39E</color>
+    <!--fb-->
+    <color name="fb_grey_color">#666874</color>
+    <color name="fb_light_grey_color">#808080</color>
+    <color name="fb_desc_txt_color">#353535</color>
+    <color name="fb_txt_color">#0E1111</color>
+    <color name="fb_sub_txt_color">#333333</color>
+    <color name="fb_divider">#E3E5E8</color>
+
+</resources>

@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:paddingHorizontal="@dimen/_10dp">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/HeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/facebook_post_generator" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/lPreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20dp"
+                android:background="@drawable/bg_instagram_post_review"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgUser"
+                        android:layout_width="@dimen/_40dp"
+                        android:layout_height="@dimen/_40dp"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_2dp"
+                        android:src="@drawable/ic_user_insta_placeholder" />
+
+                    <LinearLayout
+                        android:id="@+id/lUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/imgMore"
+                        android:layout_toEndOf="@id/imgUser"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/_5dp">
+
+                        <LinearLayout
+                            android:id="@+id/lUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgEditUserName"
+                                android:layout_width="@dimen/_20dp"
+                                android:layout_height="@dimen/_15dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:src="@drawable/ic_edit_post" />
+
+                            <TextView
+                                android:id="@+id/txtUserName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/roboto_regular"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:text="johndoe"
+                                android:textColor="@color/fb_txt_color"
+                                android:textSize="@dimen/_16sp" />
+
+                            <ImageView
+                                android:id="@+id/imgVerified"
+                                android:layout_width="@dimen/_15dp"
+                                android:layout_height="@dimen/_15dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:src="@drawable/ic_insta_verify"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/lTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="22dp"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:includeFontPadding="false"
+                                    android:text="suggested for you"
+                                    android:textColor="@color/fb_grey_color"
+                                    android:textSize="@dimen/_14sp" />
+
+                                <TextView
+                                    android:id="@+id/txtTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_7dp"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:includeFontPadding="false"
+                                    android:maxLength="30"
+                                    android:text=" · 1s"
+                                    android:textColor="@color/fb_grey_color"
+                                    android:textSize="@dimen/_14sp" />
+
+                                <ImageView
+                                    android:id="@+id/imgEditTime"
+                                    android:layout_width="@dimen/_20dp"
+                                    android:layout_height="@dimen/_15dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_5dp"
+                                    android:src="@drawable/ic_edit_post" />
+
+                                <ImageView
+                                    android:id="@+id/imgVisibleFor"
+                                    android:layout_width="@dimen/_15dp"
+                                    android:layout_height="@dimen/_15dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_5dp"
+                                    android:src="@drawable/ic_fb_public"
+                                    app:tint="@color/fb_grey_color" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imgMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_more" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/lDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgEditDesc"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_15dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_edit_post"
+                        android:visibility="visible" />
+
+                    <com.tylersuehr.socialtextview.SocialTextView
+                        android:id="@+id/txtDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/omg_is_this_a_fake_facebook_post_damn_it_looks_so_real_start_building_your_own_use_the_settings_to_the_left_to_begin_you_can_also_add_comments_emoticons_wink"
+                        android:textColor="@color/fb_desc_txt_color"
+                        android:textSize="@dimen/_16sp" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rlImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_250dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@id/imgPost"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_250dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_fb_image" />
+
+                    <ImageView
+                        android:id="@+id/imgPlay"
+                        android:layout_width="@dimen/_100dp"
+                        android:layout_height="@dimen/_100dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_play"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp">
+
+                    <LinearLayout
+                        android:id="@+id/lLike"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/lComment">
+
+                        <ImageView
+                            android:id="@+id/imgEditLikeCount"
+                            android:layout_width="@dimen/_20dp"
+                            android:layout_height="@dimen/_15dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_edit_post"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/imgLikeCount"
+                            android:layout_width="@dimen/_23dp"
+                            android:layout_height="@dimen/_23dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="-6dp"
+                            android:background="@drawable/bg_reactions_ring"
+                            android:padding="@dimen/_2dp"
+                            android:src="@drawable/ic_like_fb_fill"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/imgHaha"
+                            android:layout_width="@dimen/_23dp"
+                            android:layout_height="@dimen/_23dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="-6dp"
+                            android:background="@drawable/bg_reactions_ring"
+                            android:padding="@dimen/_2dp"
+                            android:src="@drawable/ic_fb_haha_react"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/imgLove"
+                            android:layout_width="@dimen/_23dp"
+                            android:layout_height="@dimen/_23dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="-6dp"
+                            android:background="@drawable/bg_reactions_ring"
+                            android:padding="@dimen/_2dp"
+                            android:src="@drawable/ic_fb_love_react"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/imgSad"
+                            android:layout_width="@dimen/_23dp"
+                            android:layout_height="@dimen/_23dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="-6dp"
+                            android:background="@drawable/bg_reactions_ring"
+                            android:padding="@dimen/_2dp"
+                            android:src="@drawable/ic_fb_sad_react"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/imgAngry"
+                            android:layout_width="@dimen/_23dp"
+                            android:layout_height="@dimen/_23dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="-6dp"
+                            android:background="@drawable/bg_reactions_ring"
+                            android:padding="@dimen/_2dp"
+                            android:src="@drawable/ic_fb_angry_react"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/imgWow"
+                            android:layout_width="@dimen/_23dp"
+                            android:layout_height="@dimen/_23dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="-6dp"
+                            android:background="@drawable/bg_reactions_ring"
+                            android:padding="@dimen/_2dp"
+                            android:src="@drawable/ic_fb_wow_react"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/txtLikeCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/roboto_regular"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_10dp"
+                            android:text="123"
+                            android:textColor="@color/fb_light_grey_color"
+                            android:textSize="@dimen/_14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lComment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
+
+                        <ImageView
+                            android:id="@+id/imgEditCommentCount"
+                            android:layout_width="@dimen/_20dp"
+                            android:layout_height="@dimen/_15dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_edit_post"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtCommentCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/roboto_regular"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_5dp"
+                            android:text="54 Comments"
+                            android:textColor="@color/fb_light_grey_color"
+                            android:textSize="@dimen/_15sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:background="@color/fb_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="@dimen/_10dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgLike"
+                            android:layout_width="@dimen/_23dp"
+                            android:layout_height="@dimen/_23dp"
+                            android:src="@drawable/ic_fb_like_unlike" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:includeFontPadding="false"
+                            android:maxLength="4"
+                            android:paddingStart="@dimen/_5dp"
+                            android:text="Like"
+                            android:textColor="@color/fb_sub_txt_color"
+                            android:textSize="@dimen/_15sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_23dp"
+                            android:layout_height="@dimen/_23dp"
+                            android:src="@drawable/ic_fb_comment"
+                            app:tint="@color/tweet_light_grey" />
+
+                        <TextView
+                            android:id="@+id/txtRetweetCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_5dp"
+                            android:text="Comment"
+                            android:textColor="@color/fb_sub_txt_color"
+                            android:textSize="@dimen/_15sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical|end"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_23dp"
+                            android:layout_height="@dimen/_23dp"
+                            android:src="@drawable/ic_fb_share"
+                            app:tint="@color/tweet_dark_grey" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:includeFontPadding="false"
+                            android:paddingStart="@dimen/_5dp"
+                            android:text="Share"
+                            android:textColor="@color/fb_sub_txt_color"
+                            android:textSize="@dimen/_15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_15dp">
+
+                <TextView
+                    android:id="@+id/txtPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLength="30"
+                    android:text="@string/post"
+                    android:textColor="@color/edt_text_color"
+                    android:textSize="@dimen/_18sp" />
+
+                <RadioGroup
+                    android:id="@+id/rgPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rdPhoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:button="@null"
+                        android:drawableStart="@drawable/ic_radio_btn"
+                        android:drawablePadding="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/photo"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rdVideo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20dp"
+                        android:background="@color/transparent"
+                        android:button="@null"
+                        android:drawableStart="@drawable/ic_radio_btn"
+                        android:drawablePadding="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/video"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rdText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20dp"
+                        android:background="@color/transparent"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawableStart="@drawable/ic_radio_btn"
+                        android:drawablePadding="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/text_"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_18sp" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp">
+
+                    <CheckBox
+                        android:id="@+id/checkboxVerify"
+                        android:layout_width="20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:background="@drawable/ic_checkbox"
+                        android:button="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/is_verify"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_17sp" />
+
+                    <!--android:text="@string/is_verify"-->
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtReaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLength="30"
+                    android:text="@string/reaction"
+                    android:textColor="@color/edt_text_color"
+                    android:textSize="@dimen/_18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical">
+
+                        <CheckBox
+                            android:id="@+id/checkLike"
+                            android:layout_width="@dimen/_20dp"
+                            android:layout_height="@dimen/_20dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_checkbox"
+                            android:button="@null"
+                            android:checked="true" />
+
+                        <TextView
+                            android:id="@+id/txtCheckLike"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Like"
+                            android:textColor="@color/tweet_black"
+                            android:textSize="@dimen/_17sp" />
+
+                        <!--android:text="@string/is_verify"-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20dp">
+
+                        <CheckBox
+                            android:id="@+id/checkHaha"
+                            android:layout_width="20dp"
+                            android:layout_height="@dimen/_20dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_checkbox"
+                            android:button="@null" />
+
+                        <TextView
+                            android:id="@+id/txtCheckHaha"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Haha"
+                            android:textColor="@color/tweet_black"
+                            android:textSize="@dimen/_17sp" />
+
+                        <!--android:text="@string/is_verify"-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20dp">
+
+                        <CheckBox
+                            android:id="@+id/checkSmile"
+                            android:layout_width="20dp"
+                            android:layout_height="@dimen/_20dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_checkbox"
+                            android:button="@null" />
+
+                        <TextView
+                            android:id="@+id/txtCheckLove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Love"
+                            android:textColor="@color/tweet_black"
+                            android:textSize="@dimen/_17sp" />
+
+                        <!--android:text="@string/is_verify"-->
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/checkWow"
+                            android:layout_width="20dp"
+                            android:layout_height="@dimen/_20dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_checkbox"
+                            android:button="@null" />
+
+                        <TextView
+                            android:id="@+id/txtCheckWow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Wow"
+                            android:textColor="@color/tweet_black"
+                            android:textSize="@dimen/_17sp" />
+
+                        <!--android:text="@string/is_verify"-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20dp">
+
+                        <CheckBox
+                            android:id="@+id/checkSad"
+                            android:layout_width="20dp"
+                            android:layout_height="@dimen/_20dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_checkbox"
+                            android:button="@null" />
+
+                        <TextView
+                            android:id="@+id/txtCheckSad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Sad"
+                            android:textColor="@color/tweet_black"
+                            android:textSize="@dimen/_17sp" />
+
+                        <!--android:text="@string/is_verify"-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20dp">
+
+                        <CheckBox
+                            android:id="@+id/checkAngry"
+                            android:layout_width="20dp"
+                            android:layout_height="@dimen/_20dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/ic_checkbox"
+                            android:button="@null" />
+
+                        <TextView
+                            android:id="@+id/txtCheckAngry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Angry"
+                            android:textColor="@color/tweet_black"
+                            android:textSize="@dimen/_17sp" />
+
+                        <!--android:text="@string/is_verify"-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLength="30"
+                    android:text="@string/visible_for"
+                    android:textColor="@color/edt_text_color"
+                    android:textSize="@dimen/_18sp" />
+
+                <RadioGroup
+                    android:id="@+id/rgVisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rdPublic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawableStart="@drawable/ic_radio_btn"
+                        android:drawablePadding="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/public_"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rdFriends"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20dp"
+                        android:background="@color/transparent"
+                        android:button="@null"
+                        android:drawableStart="@drawable/ic_radio_btn"
+                        android:drawablePadding="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/friends"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rdGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableStart="@drawable/ic_radio_btn"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/edit_mode"
+                    android:textColor="@color/tweet_black"
+                    android:textSize="@dimen/_18sp" />
+
+                <RadioButton
+                    android:id="@+id/rdView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20dp"
+                    android:background="@color/transparent"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_radio_btn"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/view_mode"
+                    android:textColor="@color/tweet_black"
+                    android:textSize="@dimen/_18sp" />
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnShare"
+                style="@style/FullButton"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginVertical="@dimen/_20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/share"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

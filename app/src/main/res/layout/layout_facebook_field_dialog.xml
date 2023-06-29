@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheetCamera"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_dialog"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="@dimen/_15dp"
+    app:behavior_hideable="true"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:id="@+id/lUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/user_name"
+                    android:textColor="@color/edt_text_color" />
+
+                <EditText
+                    android:id="@+id/etUserName"
+                    style="@style/CardShapeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="@dimen/_5dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:maxLength="30"
+                    android:textColor="@color/et_text_color"
+                    android:textSize="@dimen/_16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lPostDateTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5dp"
+                    android:layout_weight="1"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/post_date"
+                        android:textColor="@color/edt_text_color" />
+
+                    <EditText
+                        android:id="@+id/etPostDate"
+                        style="@style/CardShapeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5dp"
+                        android:clipToPadding="false"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:paddingHorizontal="@dimen/_5dp"
+                        android:paddingVertical="@dimen/_10dp"
+                        android:textColor="@color/et_text_color"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5dp"
+                    android:layout_weight="1"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/post_time"
+                        android:textColor="@color/edt_text_color"
+                        android:textSize="@dimen/_16sp" />
+
+                    <EditText
+                        android:id="@+id/etPostTime"
+                        style="@style/CardShapeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5dp"
+                        android:clipToPadding="false"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:paddingHorizontal="@dimen/_5dp"
+                        android:paddingVertical="@dimen/_10dp"
+                        android:textColor="@color/et_text_color"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/post_desciption"
+                    android:textColor="@color/edt_text_color" />
+
+                <EditText
+                    android:id="@+id/etDesc"
+                    style="@style/CardShapeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:clipToPadding="false"
+                    android:gravity="start"
+                    android:lines="4"
+                    android:maxLength="250"
+                    android:paddingHorizontal="@dimen/_5dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:text="This is a sample post text. @mentions, #hashtags, https://links.com are all automatically converted."
+                    android:textColor="@color/et_text_color"
+                    android:textSize="@dimen/_16sp" />
+            </LinearLayout>
+
+
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:fontFamily="@font/roboto_medium"-->
+            <!--                android:text="@string/stats_amp_states"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="@dimen/_17sp" />-->
+
+
+            <LinearLayout
+                android:id="@+id/lLikeCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/like_count"
+                    android:textColor="@color/edt_text_color" />
+
+                <EditText
+                    android:id="@+id/etLikeCount"
+                    style="@style/CardShapeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:clipToPadding="false"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:paddingHorizontal="@dimen/_5dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:textColor="@color/et_text_color"
+                    android:textSize="@dimen/_16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lCommentCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/comment_count"
+                    android:textColor="@color/edt_text_color" />
+
+                <EditText
+                    android:id="@+id/etCommentCount"
+                    style="@style/CardShapeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:clipToPadding="false"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:paddingHorizontal="@dimen/_5dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:textColor="@color/et_text_color"
+                    android:textSize="@dimen/_16sp" />
+            </LinearLayout>
+
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginVertical="@dimen/_10dp"-->
+            <!--                android:fontFamily="@font/roboto_medium"-->
+            <!--                android:text="@string/comments"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="@dimen/_17sp" />-->
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDone"
+                style="@style/FullButton"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginBottom="@dimen/_20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/done"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

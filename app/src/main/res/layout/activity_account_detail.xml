@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="?actionBarSize"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="@string/account_detail"
+        android:textColor="@color/reg_text"
+        android:textSize="@dimen/_20sp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/lLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_90dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_25dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/relativImage"
+                    android:layout_width="@dimen/_125dp"
+                    android:layout_height="@dimen/_125dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_15dp"
+                    android:background="@drawable/ic_bg_profile">
+
+                    <!--<com.grewon.qmaker.helper.AspectImageView
+                android:id="@+id/ivCameraProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:padding="@dimen/_10dp"
+                app:aspectRatio="1"
+                android:visibility="visible"
+                app:aspectRatioEnabled="true" />-->
+                    <ImageView
+                        android:id="@+id/imgUser"
+                        android:layout_width="@dimen/_120dp"
+                        android:layout_height="@dimen/_120dp"
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_5dp"
+                        android:src="@drawable/ic_profile_avatar" />
+
+                    <ImageView
+                        android:id="@+id/img_edit"
+                        android:layout_width="@dimen/_30dp"
+                        android:layout_height="@dimen/_30dp"
+                        android:layout_alignEnd="@+id/imgUser"
+                        android:layout_alignBottom="@+id/imgUser"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/ic_edit_image" />
+                    <!-- <com.grewon.qmaker.helper.AspectImageView
+                    android:id="@+id/ivUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />-->
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/_30dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/name"
+                    android:textColor="@color/sky_color"
+                    android:textSize="@dimen/_15sp" />
+
+                <EditText
+                    android:id="@+id/edtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:background="@drawable/bg_edttext"
+                    android:fontFamily="@font/roboto_medium"
+                    android:hint="@string/enter_your_name_here"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/_15dp"
+                    android:textColor="#F3A5A6AA"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/_16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/user_id"
+                    android:textColor="@color/sky_color"
+                    android:textSize="@dimen/_15sp" />
+
+
+                <EditText
+                    android:id="@+id/edtUserId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_edttext"
+                    android:fontFamily="@font/roboto_medium"
+                    android:hint="@string/enter_user_id"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="20"
+                    android:padding="@dimen/_15dp"
+                    android:textColor="#F3A5A6AA"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/_16sp" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSave"
+                    style="@style/FullButton"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/save"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150dp"
+                android:layout_below="@id/lLogin"
+                android:layout_marginTop="@dimen/_50dp"
+                android:layout_marginBottom="@dimen/_30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_wave" />
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:paddingHorizontal="@dimen/_10dp">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/HeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/instagram_post_generator" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:fillViewport="true"
+
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/lEditView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <!--preview_layout-->
+
+            <LinearLayout
+                android:id="@+id/lPreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_20dp"
+                android:background="@drawable/bg_instagram_post_review"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgUser"
+                        android:layout_width="@dimen/_40dp"
+                        android:layout_height="@dimen/_40dp"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_3dp"
+                        android:src="@drawable/ic_user_insta_placeholder" />
+
+                    <LinearLayout
+                        android:id="@+id/lUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/imgMore"
+                        android:layout_toEndOf="@id/imgUser"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/_5dp">
+
+                        <LinearLayout
+                            android:id="@+id/lName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:id="@+id/imgEditUserName"
+                                android:layout_width="@dimen/_20dp"
+                                android:layout_height="@dimen/_15dp"
+                                android:layout_gravity="center_vertical"
+
+                                android:src="@drawable/ic_edit_post" />
+
+                            <TextView
+                                android:id="@+id/txtUserName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:maxLength="30"
+                                android:text="AnnaMarina"
+                                android:textColor="@color/insta_text_color"
+                                android:textSize="@dimen/_16sp" />
+
+
+
+                            <ImageView
+                                android:id="@+id/imgVerified"
+                                android:layout_width="@dimen/_15dp"
+                                android:layout_height="@dimen/_15dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:src="@drawable/ic_insta_verify"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lDesc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgEditDescription"
+                                android:layout_width="@dimen/_20dp"
+                                android:layout_height="@dimen/_15dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_edit_post" />
+                            <TextView
+                                android:id="@+id/txtDescription"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:text="New York, USA"
+                                android:textColor="@color/insta_light_grey_text"
+                                android:textSize="@dimen/_13sp" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imgMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_more"
+                        android:padding="@dimen/_5dp"
+                        app:tint="@color/insta_text_color" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="275dp">
+
+                    <ImageView
+                        android:id="@+id/imgPost"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_insta_post_placeholder" />
+
+                    <ImageView
+                        android:id="@+id/imgTagged"
+                        android:layout_width="@dimen/_23dp"
+                        android:layout_height="@dimen/_23dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="@dimen/_15dp"
+                        android:src="@drawable/ic_taged_person"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imgNextPost"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15dp"
+                        android:layout_marginTop="@dimen/_15dp"
+                        android:layout_marginEnd="@dimen/_15dp"
+                        android:layout_marginBottom="@dimen/_15dp"
+                        android:src="@drawable/ic_next_post"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/txtImageCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_15dp"
+                        android:layout_marginTop="@dimen/_15dp"
+                        android:layout_marginEnd="@dimen/_15dp"
+                        android:layout_marginBottom="@dimen/_15dp"
+                        android:background="@drawable/bg_insta_image_count"
+                        android:fontFamily="@font/roboto_regular"
+                        android:padding="@dimen/_5dp"
+                        android:text="1/3"
+                        android:textColor="@color/insta_image_count_color"
+                        android:textSize="@dimen/_13sp"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <com.mazenrashed.dotsindicator.DotsIndicator
+                    android:id="@+id/dotIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:visibility="invisible"
+                    app:dot_height="7dp"
+                    app:dot_width="7dp"
+                    app:first_dot_height="7dp"
+                    app:first_dot_width="7dp"
+                    app:first_selected_dot_resource="@drawable/ic_selected_indecator"
+                    app:margins_between_dots="@dimen/_5dp"
+                    app:selected_dot_resource="@drawable/ic_selected_indecator"
+                    app:selected_dot_scale_factor="1"
+                    app:unselected_dot_resource="@drawable/ic_unselected_indecator" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/_10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgLike"
+                            android:layout_width="@dimen/_22dp"
+                            android:layout_height="@dimen/_22dp"
+                            android:src="@drawable/ic_insta_like_unlike" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_22dp"
+                            android:layout_height="@dimen/_22dp"
+                            android:layout_marginHorizontal="@dimen/_20dp"
+                            android:src="@drawable/ic_chat_insta" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_22dp"
+                            android:layout_height="@dimen/_22dp"
+                            android:src="@drawable/ic_share_insta" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imgSave"
+                        android:layout_width="@dimen/_22dp"
+                        android:layout_height="@dimen/_22dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_insta_save_unsave" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lLikeCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgEditLikeCount"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_15dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_edit_post" />
+
+                    <TextView
+                        android:id="@+id/txtLikeCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="123 likes"
+                        android:textColor="@color/insta_text_color"
+                        android:textSize="@dimen/_16sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lPostText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10dp">
+
+                    <ImageView
+                        android:id="@+id/imgEditPostText"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_15dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_edit_post" />
+
+                    <TextView
+                        android:id="@+id/txtPostText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:maxLines="2"
+                        android:textColor="@color/insta_text_color"
+                        android:textSize="@dimen/_15sp" />
+                    <!--android:text="@string/data_post_text"-->
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10dp">
+
+                    <ImageView
+                        android:id="@+id/imgEditCommentCount"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_15dp"
+                        android:layout_gravity="center_vertical"
+
+                        android:src="@drawable/ic_edit_post" />
+
+                    <TextView
+                        android:id="@+id/txtCommentCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="View all 1,234 comments"
+                        android:textColor="@color/insta_grey_text"
+                        android:textSize="@dimen/_15sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lFComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_toStartOf="@+id/imgFCommentLike"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10dp">
+
+                    <ImageView
+                        android:id="@+id/imgEditFComment"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_15dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_edit_post" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlFComment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/txtFirstComment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@+id/imgFCommentLike"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:maxLines="2"
+                            android:text="John Nice"
+                            android:textColor="@color/insta_text_color"
+                            android:textSize="@dimen/_15sp" />
+
+                        <ImageView
+                            android:id="@+id/imgFCommentLike"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignTop="@id/txtFirstComment"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/_5dp"
+                            android:src="@drawable/ic_insta_like_unlike" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lSComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7dp"
+                    android:layout_toStartOf="@+id/imgSCommentLike"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10dp">
+
+                    <ImageView
+                        android:id="@+id/imgEditSComment"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_15dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_edit_post" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlSComment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtSecondComment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@+id/imgSCommentLike"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:maxLines="2"
+                            android:text="johnniedoe 🔥🔥🔥"
+                            android:textColor="@color/insta_text_color"
+                            android:textSize="@dimen/_15sp" />
+
+                        <ImageView
+                            android:id="@+id/imgSCommentLike"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignTop="@id/txtSecondComment"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/_5dp"
+                            android:src="@drawable/ic_insta_like_unlike" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lOwnAddComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/_10dp"
+                    android:paddingVertical="@dimen/_5dp"
+                    android:visibility="gone">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgOwnuser"
+                        android:layout_width="@dimen/_40dp"
+                        android:layout_height="@dimen/_40dp"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_2dp"
+                        android:src="@drawable/ic_user_insta_placeholder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgOwnuser"
+                        android:fontFamily="@font/roboto_regular"
+                        android:paddingStart="@dimen/_10dp"
+                        android:text="@string/add_a_comment"
+                        android:textColor="@color/insta_grey_text"
+                        android:textSize="@dimen/_15sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_15dp"
+                            android:layout_height="@dimen/_15dp"
+                            android:src="@drawable/ic_insta_favourite" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15dp"
+                            android:layout_height="@dimen/_15dp"
+                            android:layout_marginHorizontal="@dimen/_10dp"
+                            android:src="@drawable/ic_insta_rising_hands" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_15dp"
+                            android:layout_height="@dimen/_15dp"
+                            android:src="@drawable/ic_insta_plus" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7dp"
+                    android:layout_marginBottom="@dimen/_10dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10dp">
+
+                    <ImageView
+                        android:id="@+id/imgEditTime"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_15dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_edit_post" />
+
+                    <TextView
+                        android:id="@+id/txtPostTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="1 Second Ago"
+                        android:textColor="@color/insta_grey_text"
+                        android:textSize="@dimen/_12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--edit-->
+
+            <LinearLayout
+                android:id="@+id/llEdit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_15dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/txtPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLength="30"
+                    android:text="@string/edit"
+                    android:textColor="@color/edt_text_color"
+                    android:textSize="@dimen/_18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp">
+
+                    <CheckBox
+                        android:id="@+id/checkboxVerify"
+                        android:layout_width="20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:background="@drawable/ic_checkbox"
+                        android:button="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/is_verify"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_17sp" />
+
+                    <!--android:text="@string/is_verify"-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp">
+
+                    <CheckBox
+                        android:id="@+id/checkboxTag"
+                        android:layout_width="20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:background="@drawable/ic_checkbox"
+                        android:button="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/is_someone_tagged"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_17sp" />
+
+                    <!--android:text="@string/is_verify"-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp">
+
+                    <CheckBox
+                        android:id="@+id/checkboxStory"
+                        android:layout_width="20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:background="@drawable/ic_checkbox"
+                        android:button="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/has_an_instagram_story"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_17sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="@string/image_count"
+                    android:textColor="@color/edt_text_color" />
+
+                <EditText
+                    android:id="@+id/etPostCount"
+                    style="@style/CardShapeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:clickable="true"
+                    android:clipToPadding="false"
+                    android:drawableEnd="@drawable/ic_drop_down"
+                    android:focusable="false"
+                    android:paddingHorizontal="@dimen/_5dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:textColor="@color/et_text_color"
+                    android:textSize="@dimen/_16sp" />
+
+
+            </LinearLayout>
+
+            <!--edit_or_view-->
+            <RadioGroup
+                android:id="@+id/rdGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_15dp">
+
+                <RadioButton
+                    android:id="@+id/rdEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableStart="@drawable/ic_radio_btn"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/edit_mode"
+                    android:textColor="@color/tweet_black"
+                    android:textSize="@dimen/_18sp" />
+
+                <RadioButton
+                    android:id="@+id/rdView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20dp"
+                    android:background="@color/transparent"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_radio_btn"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/view_mode"
+                    android:textColor="@color/tweet_black"
+                    android:textSize="@dimen/_18sp" />
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnShare"
+                style="@style/FullButton"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/share"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

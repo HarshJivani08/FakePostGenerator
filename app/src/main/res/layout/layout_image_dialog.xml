@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheetCamera"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_dialog"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="@dimen/_15dp"
+    app:behavior_hideable="true"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/select_profile_image"
+            android:textColor="@color/sky_color"
+            android:textSize="@dimen/_18sp" />
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="?actionBarSize"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="?actionBarItemBackground"
+            android:padding="@dimen/_15dp"
+            android:src="@drawable/ic_cancel_square" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10dp">
+
+        <LinearLayout
+            android:id="@+id/linear_camera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp">
+
+            <ImageView
+                android:layout_width="@dimen/fab_size_minimal"
+                android:layout_height="@dimen/fab_size_minimal"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_camera_" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5dp"
+                android:gravity="center"
+                android:text="Camera"
+                android:textColor="@color/sky_color"
+                android:textSize="@dimen/_16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp">
+
+            <ImageView
+                android:layout_width="@dimen/fab_size_minimal"
+                android:layout_height="@dimen/fab_size_minimal"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_gallery" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5dp"
+                android:gravity="center"
+                android:text="Gallery"
+                android:textColor="@color/sky_color"
+                android:textSize="@dimen/_16sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

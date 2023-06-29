@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_25dp"
+            android:paddingTop="@dimen/_15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/terms_condition_of"
+                android:textColor="@color/reg_text"
+                android:textSize="@dimen/_20sp" />
+
+            <ImageView
+                android:layout_width="@dimen/_150dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:src="@drawable/ic_logo_text" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imgCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_20dp"
+            app:cardElevation="@dimen/_10dp">
+
+            <!--android:background="@drawable/bg_icon"-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10dp"
+                android:src="@drawable/ic_cancel" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+  <WebView
+      android:id="@+id/webTerms"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@id/header"/>
+
+</RelativeLayout>
