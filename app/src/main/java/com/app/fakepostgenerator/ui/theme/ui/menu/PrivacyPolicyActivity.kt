@@ -1,4 +1,4 @@
-package com.grewon.qmaker.ui.menu
+package com.app.fakepostgenerator.ui.theme.ui.menu
 
 import android.os.Bundle
 import android.view.View

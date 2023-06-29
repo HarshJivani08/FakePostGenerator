@@ -2,6 +2,7 @@ package com.grewon.qmaker.utils
 
 import com.app.fakepostgenerator.R
 import com.app.fakepostgenerator.ui.theme.model.DataMenu
+import com.app.fakepostgenerator.ui.theme.model.DataWhatsappChat
 
 
 class ListUtils {
@@ -39,6 +40,16 @@ class ListUtils {
             data.add(DataMenu(R.drawable.ic_share_app, "Share App"))
             data.add(DataMenu(R.drawable.ic_rate, "Rate Us"))
             data.add(DataMenu(R.drawable.ic_more_app, "More Apps"))
+
+            return data
+        }
+
+        fun addChatList(): ArrayList<DataWhatsappChat> {
+            val data: ArrayList<DataWhatsappChat> = ArrayList()
+
+            data.add(DataWhatsappChat("", "", "Today", 2, "", isEditCheck = true, isSeen = false, "ANDROID",0,true))
+            data.add(DataWhatsappChat("Hello", "10:00 am", "", 1, "", isEditCheck = true, isSeen = false, "ANDROID",2,true))
+            data.add(DataWhatsappChat("Hello..", "10:00 am", "", 0, "", isEditCheck = true, isSeen = false, "ANDROID",1,true))
 
             return data
         }

@@ -89,7 +89,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
-                            android:paddingVertical="@dimen/_20dp">
+                            android:paddingVertical="@dimen/_40dp">
 
                             <TextView
                                 android:id="@+id/txtCreate"
@@ -132,7 +132,7 @@
                             android:layout_height="@dimen/_45dp"
                             android:layout_centerVertical="true"
                             android:layout_alignParentEnd="true"
-                            android:src="@drawable/ic_instagram_logo" />
+                            android:src="@drawable/ic_instagram" />
 
                     </RelativeLayout>
 
@@ -156,7 +156,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
-                            android:paddingVertical="@dimen/_20dp">
+                            android:paddingVertical="@dimen/_40dp">
 
                             <TextView
                                 android:id="@+id/txtCreateReview"
@@ -198,7 +198,7 @@
                             android:layout_height="@dimen/_45dp"
                             android:layout_centerVertical="true"
                             android:layout_alignParentEnd="true"
-                            android:src="@drawable/ic_facebook_logo" />
+                            android:src="@drawable/ic_facebook" />
 
                     </RelativeLayout>
 
@@ -223,7 +223,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
-                            android:paddingVertical="@dimen/_20dp">
+                            android:paddingVertical="@dimen/_40dp">
 
                             <TextView
                                 android:id="@+id/txtCreateFakePost"
@@ -267,7 +267,8 @@
                             android:layout_height="@dimen/_45dp"
                             android:layout_centerVertical="true"
                             android:layout_alignParentEnd="true"
-                            android:src="@drawable/ic_tweeter" />
+                            android:src="@drawable/ic_twitter" />
+
 
                     </RelativeLayout>
 
@@ -282,42 +283,57 @@
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/_20sp">
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/bg_quote_post_home"
-                        android:paddingStart="@dimen/_30dp"
-                        android:orientation="vertical"
-                        android:paddingVertical="@dimen/_20dp">
+                        android:paddingHorizontal="@dimen/_30dp">
 
-                        <TextView
-                            android:id="@+id/txtCreateQuote"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_regular"
-                            android:text="@string/create"
-                            android:textColor="@color/black_21"
-                            android:textSize="@dimen/_20sp" />
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingVertical="@dimen/_40dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/txtCreateQuote"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="WhatsApp chat"
-                            android:textColor="@color/black_35"
-                            android:textSize="@dimen/_22sp" />
+                            <TextView
+                                android:id="@+id/txtCreateQuote"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="@string/create"
+                                android:textColor="@color/black_21"
+                                android:textSize="@dimen/_20sp" />
 
-<!--                        <ImageView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_alignParentStart="true"-->
-<!--                            android:layout_alignParentBottom="true"-->
-<!--                            android:layout_marginVertical="@dimen/_20dp"-->
-<!--                            android:src="@drawable/ic_arrow_right" />-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtCreateQuote"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="WhatsApp chat"
+                                android:textColor="@color/black_35"
+                                android:textSize="@dimen/_22sp" />
+
+                            <!--                        <ImageView-->
+                            <!--                            android:layout_width="wrap_content"-->
+                            <!--                            android:layout_height="wrap_content"-->
+                            <!--                            android:layout_alignParentStart="true"-->
+                            <!--                            android:layout_alignParentBottom="true"-->
+                            <!--                            android:layout_marginVertical="@dimen/_20dp"-->
+                            <!--                            android:src="@drawable/ic_arrow_right" />-->
 
 
-                    </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="@dimen/_45dp"
+                            android:layout_height="@dimen/_45dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_whatsapp" />
+
+                    </RelativeLayout>
+
+
                 </androidx.cardview.widget.CardView>
 
 

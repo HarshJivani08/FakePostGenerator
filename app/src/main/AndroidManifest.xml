@@ -41,6 +41,22 @@
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ui.theme.ui.whatsapp.WhatsappChatActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.theme.ui.menu.MenuActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.theme.ui.FacebookPostActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.theme.ui.TweeterPostActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.theme.ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"

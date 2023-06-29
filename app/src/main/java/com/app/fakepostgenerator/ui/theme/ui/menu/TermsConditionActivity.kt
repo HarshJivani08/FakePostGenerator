@@ -1,4 +1,4 @@
-package com.grewon.qmaker.ui.menu
+package com.app.fakepostgenerator.ui.theme.ui.menu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

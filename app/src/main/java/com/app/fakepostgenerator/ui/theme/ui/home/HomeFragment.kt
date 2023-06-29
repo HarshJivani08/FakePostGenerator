@@ -12,7 +12,7 @@ import com.app.fakepostgenerator.databinding.FragmentHomeBinding
 import com.app.fakepostgenerator.ui.theme.ui.FacebookPostActivity
 import com.app.fakepostgenerator.ui.theme.ui.InstagramPostActivity
 import com.app.fakepostgenerator.ui.theme.ui.MainActivity
-import com.grewon.qmaker.ui.menu.MenuActivity
+import com.app.fakepostgenerator.ui.theme.ui.menu.MenuActivity
 import com.tombayley.activitycircularreveal.CircularReveal
 
 class HomeFragment() : Fragment(), View.OnClickListener {

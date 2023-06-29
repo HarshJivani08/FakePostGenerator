@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheetCamera"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_dialog"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="@dimen/_15dp"
+    app:behavior_hideable="true"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/name"
+                    android:textColor="@color/edt_text_color" />
+
+                <EditText
+                    android:id="@+id/etName"
+                    style="@style/CardShapeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="@dimen/_5dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:textColor="@color/et_text_color"
+                    android:textSize="@dimen/_16sp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/lMsgBreak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/message_break"
+                    android:textColor="@color/edt_text_color" />
+
+                <EditText
+                    android:id="@+id/etMsgBreak"
+                    style="@style/CardShapeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="@dimen/_5dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:text="Today"
+                    android:textColor="@color/et_text_color"
+                    android:textSize="@dimen/_16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lSendChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/sender_chat"
+                    android:textColor="@color/black_35"
+                    android:textSize="@dimen/_20sp" />
+
+                <RelativeLayout
+                    android:id="@+id/rlSendImage"
+                    android:layout_width="@dimen/_100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_horizontal">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSendImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100dp"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearance="@style/RoundImage.10"
+                        android:src="@drawable/image_placeholder" />
+
+                    <ImageView
+                        android:id="@+id/imgDeleteSendImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/imgSendImage"
+                        android:layout_alignEnd="@+id/imgSendImage"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginEnd="-15dp"
+                        android:layout_marginBottom="@dimen/_10dp"
+                        android:padding="@dimen/_5dp"
+                        android:src="@drawable/ic_round_cancel"
+                        android:visibility="gone"
+                        app:tint="@color/whatsapp_hint_color" />
+
+                </RelativeLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/message"
+                        android:textColor="@color/edt_text_color" />
+
+                    <EditText
+                        android:id="@+id/etSendText"
+                        style="@style/CardShapeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5dp"
+                        android:clipToPadding="false"
+                        android:lines="3"
+                        android:gravity="start"
+                        android:paddingHorizontal="@dimen/_5dp"
+                        android:paddingVertical="@dimen/_10dp"
+                        android:textColor="@color/et_text_color"
+                        android:textSize="@dimen/_16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/time"
+                        android:textColor="@color/edt_text_color" />
+
+                    <EditText
+                        android:id="@+id/etSendTime"
+                        style="@style/CardShapeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5dp"
+                        android:clipToPadding="false"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:paddingHorizontal="@dimen/_5dp"
+                        android:paddingVertical="@dimen/_10dp"
+                        android:textColor="@color/et_text_color"
+                        android:textSize="@dimen/_16sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20dp">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxSeen"
+                        android:layout_width="20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:background="@drawable/ic_checkbox"
+                        android:button="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/is_msg_seen"
+                        android:textColor="@color/tweet_black"
+                        android:textSize="@dimen/_17sp" />
+
+                    <!--android:text="@string/is_verify"-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lReceiveChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/receiver_chat"
+                    android:textColor="@color/black_35"
+                    android:textSize="@dimen/_20sp" />
+
+                <RelativeLayout
+                    android:id="@+id/rlReceiveImage"
+                    android:layout_width="@dimen/_100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+<!--                    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                        android:id="@+id/imgReceiveImage"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="@dimen/_100dp"-->
+<!--                        android:layout_marginTop="@dimen/_10dp"-->
+<!--                        android:src="@drawable/ic_user_insta_placeholder" />-->
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgReceiveImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100dp"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearance="@style/RoundImage.10"
+                        android:src="@drawable/image_placeholder" />
+
+                    <ImageView
+                        android:id="@+id/imgDeleteReceiveImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/imgReceiveImage"
+                        android:layout_alignEnd="@+id/imgReceiveImage"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginEnd="-15dp"
+                        android:layout_marginBottom="@dimen/_10dp"
+                        android:padding="@dimen/_5dp"
+                        android:src="@drawable/ic_round_cancel"
+                        android:visibility="gone"
+                        app:tint="@color/whatsapp_hint_color" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/message"
+                        android:textColor="@color/edt_text_color" />
+
+                    <EditText
+                        android:id="@+id/etReceiveText"
+                        style="@style/CardShapeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5dp"
+                        android:clipToPadding="false"
+                        android:lines="3"
+                        android:gravity="start"
+                        android:paddingHorizontal="@dimen/_5dp"
+                        android:paddingVertical="@dimen/_10dp"
+                        android:textColor="@color/et_text_color"
+                        android:textSize="@dimen/_16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/time"
+                        android:textColor="@color/edt_text_color" />
+
+                    <EditText
+                        android:id="@+id/etReceiveTime"
+                        style="@style/CardShapeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5dp"
+                        android:clipToPadding="false"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:paddingHorizontal="@dimen/_5dp"
+                        android:paddingVertical="@dimen/_10dp"
+                        android:textColor="@color/et_text_color"
+                        android:textSize="@dimen/_16sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDone"
+                style="@style/FullButton"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginBottom="@dimen/_20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/done"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

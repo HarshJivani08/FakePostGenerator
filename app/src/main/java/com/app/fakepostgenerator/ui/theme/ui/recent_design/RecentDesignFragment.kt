@@ -27,9 +27,10 @@ import com.app.fakepostgenerator.ui.theme.app.Constant
 import com.app.fakepostgenerator.ui.theme.dialog.DialogRecentPost
 import com.app.fakepostgenerator.ui.theme.model.DataRecentPost
 import com.app.fakepostgenerator.ui.theme.ui.MainActivity
+import com.app.fakepostgenerator.ui.theme.ui.menu.MenuActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.grewon.qmaker.ui.menu.MenuActivity
+
 import com.grewon.qmaker.ui.recent_design.adapter.AdapterRecentPost
 import com.tombayley.activitycircularreveal.CircularReveal
 import java.io.File

@@ -1,16 +1,16 @@
 package com.app.fakepostgenerator.ui.theme.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.app.fakepostgenerator.R
 import com.app.fakepostgenerator.databinding.ActivityHomeBinding
-import com.app.fakepostgenerator.databinding.ActivityMainBinding
-import com.app.fakepostgenerator.databinding.FragmentHomeBinding
+
 import com.app.fakepostgenerator.ui.theme.app.BaseActivity
-import com.grewon.qmaker.ui.menu.MenuActivity
+import com.app.fakepostgenerator.ui.theme.ui.menu.MenuActivity
+import com.app.fakepostgenerator.ui.theme.ui.whatsapp.WhatsappChatActivity
 import com.tombayley.activitycircularreveal.CircularReveal
 
 class HomeActivity : BaseActivity(), View.OnClickListener {
@@ -70,8 +70,8 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
                 startActivity(intent)
             }
            binding.lWhatsAppChat -> {
-//                val intent = Intent(requireActivity(), QuotePostActivity::class.java)
-//                startActivity(intent)
+               val intent = Intent(this, WhatsappChatActivity::class.java)
+               startActivity(intent)
             }
 
         }

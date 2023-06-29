@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10dp">
+
+    <LinearLayout
+        android:id="@+id/lMsgTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_wtsp_chat_time_android"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_10dp"
+        android:paddingVertical="@dimen/_5dp">
+
+        <ImageView
+            android:id="@+id/imgDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete_msg" />
+
+        <TextView
+            android:id="@+id/txtMsgTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Today"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.grewon.qmaker.ui.menu
+package com.app.fakepostgenerator.ui.theme.ui.menu
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -74,12 +74,12 @@ class MenuActivity : BaseActivity(), View.OnClickListener,
             }
             1 -> {
                 //terms & condition
-                val intent = Intent(applicationContext,TermsConditionActivity::class.java)
+                val intent = Intent(applicationContext, TermsConditionActivity::class.java)
                 startActivity(intent)
             }
             2 -> {
                 //privacy policy
-                val intent = Intent(applicationContext,PrivacyPolicyActivity::class.java)
+                val intent = Intent(applicationContext, PrivacyPolicyActivity::class.java)
                 startActivity(intent)
             }
             3 -> {
@@ -89,7 +89,7 @@ class MenuActivity : BaseActivity(), View.OnClickListener,
             }
             4 -> {
                 //about us
-                val intent = Intent(applicationContext,AboutActivity::class.java)
+                val intent = Intent(applicationContext, AboutActivity::class.java)
                 startActivity(intent)
             }
             5 -> {

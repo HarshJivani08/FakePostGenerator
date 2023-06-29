@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_50dp"
+    android:layout_marginTop="@dimen/_10dp">
+
+    <RelativeLayout
+        android:id="@+id/lMain"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_150dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/bg_send_wtsp_corner"
+
+        android:paddingStart="@dimen/_10dp"
+        android:paddingEnd="@dimen/_17dp"
+        app:cardCornerRadius="@dimen/_5dp"
+        app:cardElevation="@dimen/_0dp">
+
+        <!--app:cardBackgroundColor="@color/sender_bg_color"-->
+        <!--android:background="@drawable/bg_send_msg"-->
+
+        <ImageView
+            android:id="@+id/imgSenderImage"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_marginVertical="@dimen/_10dp"
+            android:src="@drawable/ic_image_placeholder"
+            android:visibility="visible" />
+
+
+        <!--android:background="@drawable/bg_sender"-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imgSenderImage"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_5dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5dp">
+
+            <ImageView
+                android:id="@+id/imgDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_delete_msg"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="10:30 am"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sp" />
+
+            <ImageView
+                android:id="@+id/imgSeen"
+                android:layout_width="@dimen/_15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_5dp"
+                android:src="@drawable/ic_seen_msg"
+                app:tint="@color/white" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>
+
