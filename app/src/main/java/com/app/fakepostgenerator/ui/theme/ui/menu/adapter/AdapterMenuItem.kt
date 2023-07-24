@@ -1,4 +1,4 @@
-package com.grewon.qmaker.ui.menu.adapter
+package com.app.fakepostgenerator.ui.theme.ui.menu.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -35,7 +35,7 @@ class AdapterMenuItem(var context: Context, var onMenuClickListener: OnMenuClick
     }
 
     @SuppressLint("RecyclerView")
-    override fun onBindViewHolder(holder: MyViewHolder,  position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = beans[position]
 
         holder.image.setImageResource(data.menuImage)

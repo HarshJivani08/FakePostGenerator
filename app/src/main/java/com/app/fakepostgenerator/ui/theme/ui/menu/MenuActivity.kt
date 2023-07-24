@@ -5,15 +5,15 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.fakepostgenerator.BuildConfig
 import com.app.fakepostgenerator.R
 import com.app.fakepostgenerator.databinding.ActivityMenuBinding
 import com.app.fakepostgenerator.ui.theme.app.BaseActivity
+import com.app.fakepostgenerator.ui.theme.app.Constant
 import com.app.fakepostgenerator.ui.theme.model.DataMenu
-import com.grewon.qmaker.ui.menu.adapter.AdapterMenuItem
-import com.grewon.qmaker.utils.ListUtils
+import com.app.fakepostgenerator.ui.theme.ui.menu.adapter.AdapterMenuItem
+import com.app.fakepostgenerator.ui.theme.utils.ListUtils
 import com.tombayley.activitycircularreveal.CircularReveal
 
 
@@ -94,7 +94,7 @@ class MenuActivity : BaseActivity(), View.OnClickListener,
             }
             5 -> {
                 //contact us
-//                startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:${Constant.EMAIL}")))
+                startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:${Constant.EMAIL}")))
             }
             6 -> {
 

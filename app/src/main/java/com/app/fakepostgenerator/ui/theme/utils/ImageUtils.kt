@@ -1,4 +1,4 @@
-package com.grewon.qmaker.utils
+package  com.app.fakepostgenerator.ui.theme.utils
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable

@@ -13,6 +13,7 @@
     <uses-permission android:name="com.android.vending.BILLING`" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_*"/>
 
     <application
         android:allowBackup="true"
@@ -42,6 +43,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.theme.ui.whatsapp.WhatsappChatActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.theme.ui.menu.PrivacyPolicyActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity

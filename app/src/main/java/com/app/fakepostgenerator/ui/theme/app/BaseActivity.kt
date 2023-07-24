@@ -3,7 +3,7 @@ package com.app.fakepostgenerator.ui.theme.app
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.grewon.qmaker.utils.PreferenceUtils
+import com.app.fakepostgenerator.ui.theme.utils.PreferenceUtils
 
 open class BaseActivity : AppCompatActivity() {
 

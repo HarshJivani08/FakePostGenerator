@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FakePostGenerator</string>
+    <string name="app_name">SocialMediaPost</string>
 
     <string name="permission_denied">Permission Denied</string>
     <string name="allow_permission_from_app_setting">Permission is denied, Please allow permissions from App Settings.</string>

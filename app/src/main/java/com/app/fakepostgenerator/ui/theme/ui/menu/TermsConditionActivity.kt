@@ -27,6 +27,5 @@ class TermsConditionActivity : AppCompatActivity() {
         binding.imgCancel.setOnClickListener{
             onBackPressed()
         }
-
     }
 }

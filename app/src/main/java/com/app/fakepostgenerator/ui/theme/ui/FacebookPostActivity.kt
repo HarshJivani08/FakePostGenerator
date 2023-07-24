@@ -25,13 +25,16 @@ import com.app.fakepostgenerator.ui.theme.app.BaseActivity
 import com.app.fakepostgenerator.ui.theme.app.Constant
 import com.app.fakepostgenerator.ui.theme.dialog.SimpleImagePickerBottomDialog
 import com.app.fakepostgenerator.ui.theme.model.DataRecentPost
+import com.app.fakepostgenerator.ui.theme.utils.DateUtils
+import com.app.fakepostgenerator.ui.theme.utils.prettyCount
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.grewon.qmaker.ui.recent_design.RecentDesignFragment
-import com.grewon.qmaker.utils.DateUtils
-import com.grewon.qmaker.utils.prettyCount
+import droidninja.filepicker.FilePickerBuilder
+import droidninja.filepicker.FilePickerConst
+import droidninja.filepicker.utils.ContentUriUtils
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -52,6 +55,7 @@ class FacebookPostActivity : BaseActivity(), View.OnClickListener {
     private var likeCount: Int = 123
     private var isEdit: Boolean = false
     private var isViewMode: Boolean? = false
+    private var imageList: ArrayList<String>? = ArrayList()
     private var reactionCount: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,7 +87,7 @@ class FacebookPostActivity : BaseActivity(), View.OnClickListener {
     private fun setClick() {
         binding.imgBack.setOnClickListener(this)
         binding.imgUser.setOnClickListener(this)
-        binding.imgPost.setOnClickListener(this)
+        binding.rlImage.setOnClickListener(this)
         binding.imgEditUserName.setOnClickListener(this)
         binding.imgEditTime.setOnClickListener(this)
         binding.imgEditDesc.setOnClickListener(this)
@@ -339,20 +343,25 @@ class FacebookPostActivity : BaseActivity(), View.OnClickListener {
                 }
             }
 
-            binding.imgPost -> {
+//            binding.imgPost -> {
+//                if (isViewMode == false) {
+//                    val dialog = SimpleImagePickerBottomDialog()
+//                    dialog.setOnViewClickedListener(object : SimpleImagePickerBottomDialog.OnViewClickedListener {
+//
+//                        override fun onImageSelected(image: String) {
+//                            Log.e("INSTA_USER_IMAGE", "onImageSelected: " + image)
+//                            dialog.dismiss()
+//                            Glide.with(this@FacebookPostActivity).load(image).into(binding.imgPost)
+//                            binding.imgPost.tag = image
+//                            isEdit = true
+//                        }
+//                    })
+//                    dialog.show(supportFragmentManager, "ImagePicker")
+//                }
+//            }
+            binding.rlImage ->{
                 if (isViewMode == false) {
-                    val dialog = SimpleImagePickerBottomDialog()
-                    dialog.setOnViewClickedListener(object : SimpleImagePickerBottomDialog.OnViewClickedListener {
-
-                        override fun onImageSelected(image: String) {
-                            Log.e("INSTA_USER_IMAGE", "onImageSelected: " + image)
-                            dialog.dismiss()
-                            Glide.with(this@FacebookPostActivity).load(image).into(binding.imgPost)
-                            binding.imgPost.tag = image
-                            isEdit = true
-                        }
-                    })
-                    dialog.show(supportFragmentManager, "ImagePicker")
+                    selectPhoto()
                 }
             }
 
@@ -624,8 +633,6 @@ class FacebookPostActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun shareImage() {
-
-
         /*
         *  if (TextUtils.isEmpty(reviewText)){
             isTextEdit = true
@@ -641,7 +648,6 @@ class FacebookPostActivity : BaseActivity(), View.OnClickListener {
             }
         }*/
 
-
         try {
             val folderPath = File(Constant.FOLDER_PATH)
             if (!folderPath.exists()) {
@@ -650,7 +656,6 @@ class FacebookPostActivity : BaseActivity(), View.OnClickListener {
             }
             val file = File(Constant.FOLDER_PATH + "TEMP" + System.currentTimeMillis() + ".png")
             val output = FileOutputStream(file)
-
 
             /*------------------------------------*/
 
@@ -698,10 +703,101 @@ class FacebookPostActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
-    fun viewToBitmap(view: View): Bitmap? {
+    private fun viewToBitmap(view: View): Bitmap? {
         val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
         view.draw(canvas)
         return bitmap
     }
+
+    private fun selectPhoto() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requestImagePermissionGallery.launch(
+                arrayOf(
+                    Manifest.permission.READ_MEDIA_IMAGES,
+                    Manifest.permission.CAMERA,
+                ),
+            )
+        } else {
+            requestImagePermissionGallery.launch(
+                arrayOf(
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.CAMERA,
+                ),
+            )
+        }
+    }
+
+    private val requestImagePermissionGallery = registerForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions(),
+    ) { map ->
+        if (!ArrayList(map.map { it.value }).contains(false)) {
+            galleryIntent()
+        }
+    }
+    private fun galleryIntent() {
+        FilePickerBuilder.instance.setMaxCount(4).setActivityTheme(R.style.Theme_PickerTheme).pickPhoto(this)
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == FilePickerConst.REQUEST_CODE_PHOTO) {
+            imageList = null
+            if (data != null) {
+                data.getParcelableArrayListExtra<Uri>(FilePickerConst.KEY_SELECTED_MEDIA)?.let {
+                    var pathList: ArrayList<String> = ArrayList()
+                    for (item in it) {
+                        val path = ContentUriUtils.getFilePath(this, item)
+                        path?.let { it1 -> pathList.add(it1) }
+                    }
+                    imageList = pathList
+                    if (!imageList.isNullOrEmpty()) {
+                        setImages(pathList)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun setImages(pathList: ArrayList<String>) {
+//        binding.cardImage.visibility = View.VISIBLE
+        when (pathList.size) {
+            1 -> {
+                binding.imgPost1.visibility = View.VISIBLE
+                binding.lImageSecond.visibility = View.GONE
+                binding.lImageThird.visibility = View.GONE
+                binding.lImageForth.visibility = View.GONE
+                Glide.with(this@FacebookPostActivity).load(pathList[0]).into(binding.imgPost1)
+            }
+            2 -> {
+                binding.imgPost1.visibility = View.GONE
+                binding.lImageSecond.visibility = View.VISIBLE
+                binding.lImageThird.visibility = View.GONE
+                binding.lImageForth.visibility = View.GONE
+                Glide.with(this@FacebookPostActivity).load(pathList[0]).into(binding.imgSecond1)
+                Glide.with(this@FacebookPostActivity).load(pathList[1]).into(binding.imgSecond2)
+            }
+            3 -> {
+                binding.imgPost1.visibility = View.GONE
+                binding.lImageSecond.visibility = View.GONE
+                binding.lImageThird.visibility = View.VISIBLE
+                binding.lImageForth.visibility = View.GONE
+                Glide.with(this@FacebookPostActivity).load(pathList[0]).into(binding.imgThird1)
+                Glide.with(this@FacebookPostActivity).load(pathList[1]).into(binding.imgThird2)
+                Glide.with(this@FacebookPostActivity).load(pathList[2]).into(binding.imgThird3)
+            }
+            4 -> {
+                binding.imgPost1.visibility = View.GONE
+                binding.lImageSecond.visibility = View.GONE
+                binding.lImageThird.visibility = View.GONE
+                binding.lImageForth.visibility = View.VISIBLE
+                Glide.with(this@FacebookPostActivity).load(pathList[0]).into(binding.imgForth1)
+                Glide.with(this@FacebookPostActivity).load(pathList[1]).into(binding.imgForth2)
+                Glide.with(this@FacebookPostActivity).load(pathList[2]).into(binding.imgForth3)
+                Glide.with(this@FacebookPostActivity).load(pathList[3]).into(binding.imgForth4)
+            }
+        }
+    }
+
 }

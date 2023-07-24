@@ -30,14 +30,14 @@ import com.app.fakepostgenerator.ui.theme.app.Constant
 import com.app.fakepostgenerator.ui.theme.app.QMakerApp
 import com.app.fakepostgenerator.ui.theme.dialog.SimpleImagePickerBottomDialog
 import com.app.fakepostgenerator.ui.theme.model.DataRecentPost
+import com.app.fakepostgenerator.ui.theme.utils.DateUtils
+import com.app.fakepostgenerator.ui.theme.utils.ImageUtils
+import com.app.fakepostgenerator.ui.theme.utils.prettyCount
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.grewon.qmaker.ui.recent_design.RecentDesignFragment
-import com.grewon.qmaker.utils.DateUtils
-import com.grewon.qmaker.utils.ImageUtils
-import com.grewon.qmaker.utils.prettyCount
 import droidninja.filepicker.FilePickerBuilder
 import droidninja.filepicker.FilePickerConst.KEY_SELECTED_MEDIA
 import droidninja.filepicker.FilePickerConst.REQUEST_CODE_PHOTO

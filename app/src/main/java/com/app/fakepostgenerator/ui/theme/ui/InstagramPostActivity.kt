@@ -18,7 +18,6 @@ import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
@@ -30,15 +29,16 @@ import com.app.fakepostgenerator.ui.theme.app.Constant
 import com.app.fakepostgenerator.ui.theme.app.QMakerApp
 import com.app.fakepostgenerator.ui.theme.dialog.SimpleImagePickerBottomDialog
 import com.app.fakepostgenerator.ui.theme.model.DataRecentPost
+import com.app.fakepostgenerator.ui.theme.utils.DateUtils
+import com.app.fakepostgenerator.ui.theme.utils.ImageUtils
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.grewon.qmaker.ui.recent_design.RecentDesignFragment
-import com.grewon.qmaker.utils.DateUtils
-import com.grewon.qmaker.utils.ImageUtils
-import com.grewon.qmaker.utils.ListUtils
-import com.grewon.qmaker.utils.prettyCount
+
+import com.app.fakepostgenerator.ui.theme.utils.ListUtils
+import com.app.fakepostgenerator.ui.theme.utils.prettyCount
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream

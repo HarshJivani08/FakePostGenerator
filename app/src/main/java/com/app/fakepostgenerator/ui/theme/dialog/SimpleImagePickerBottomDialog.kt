@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
@@ -84,9 +85,13 @@ class SimpleImagePickerBottomDialog : BottomSheetDialogFragment(), View.OnClickL
             }
 
             R.id.linear_gallery -> {
-                checkGalleryPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Constant.STORAGE_PERMISSION_CODE)
-            }
 
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+                    checkGalleryPermissions(Manifest.permission.READ_MEDIA_IMAGES, Constant.STORAGE_PERMISSION_CODE)
+                }else{
+                    checkGalleryPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Constant.STORAGE_PERMISSION_CODE)
+                }
+            }
         }
     }
 
@@ -103,6 +108,14 @@ class SimpleImagePickerBottomDialog : BottomSheetDialogFragment(), View.OnClickL
 
 
     private fun checkGalleryPermissions(permission: String, requestCode: Int) {
+
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//            p = storge_permissions_33;
+//        } else {
+//            p = storge_permissions;
+//        }
+//        return p;
+
         if (ContextCompat.checkSelfPermission(
                 requireActivity(), permission
             ) == PackageManager.PERMISSION_DENIED
@@ -114,13 +127,11 @@ class SimpleImagePickerBottomDialog : BottomSheetDialogFragment(), View.OnClickL
     }
 
     private fun openCamera() {
-
         val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-
         cameraresultLauncher.launch(takePictureIntent)
     }
 
-    var cameraresultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+    private var cameraresultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             // There are no request codes
             val data: Intent? = result.data

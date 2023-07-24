@@ -8,8 +8,7 @@ import com.app.fakepostgenerator.databinding.ActivityAccountDetailBinding
 import com.app.fakepostgenerator.ui.theme.app.BaseActivity
 import com.app.fakepostgenerator.ui.theme.dialog.SimpleImagePickerBottomDialog
 import com.app.fakepostgenerator.ui.theme.model.UserModel
-import com.grewon.qmaker.utils.ImageUtils
-import java.util.regex.Pattern
+import com.app.fakepostgenerator.ui.theme.utils.ImageUtils
 
 class AccountDetailActivity : BaseActivity(), View.OnClickListener {
 

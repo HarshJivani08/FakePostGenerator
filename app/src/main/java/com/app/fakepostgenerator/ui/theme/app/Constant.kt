@@ -31,9 +31,9 @@ class Constant {
 
         const val FIREBASE_TOKEN = "fb_token"
 
-        const val PRIVACY_POLICY = "https://sites.google.com/view/qmaker-privacy-policy"
-        const val TERMS_CONDITION = "https://sites.google.com/view/qmaker-terms-and-condition"
-        const val EMAIL = "grewon.technologies@gmail.com"
+        const val PRIVACY_POLICY = "https://sites.google.com/view/socialmediapost-privacy-policy/home"
+        const val TERMS_CONDITION = "https://sites.google.com/view/socialmediapost-terms/home"
+        const val EMAIL = "harshjivani140901@gmail.com"
 
         const val PREMIUM = "premium"
 

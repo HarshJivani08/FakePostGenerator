@@ -5,7 +5,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
 import android.view.View
-import com.grewon.qmaker.utils.PreferenceUtils
+import com.app.fakepostgenerator.ui.theme.utils.PreferenceUtils
 
 class QMakerApp : Application() {
 

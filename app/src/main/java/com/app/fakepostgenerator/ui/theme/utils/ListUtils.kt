@@ -1,4 +1,4 @@
-package com.grewon.qmaker.utils
+package com.app.fakepostgenerator.ui.theme.utils
 
 import com.app.fakepostgenerator.R
 import com.app.fakepostgenerator.ui.theme.model.DataMenu
