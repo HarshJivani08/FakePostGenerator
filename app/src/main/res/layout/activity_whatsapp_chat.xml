@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@color/app_inside_bg_color">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -24,6 +25,7 @@
             style="@style/HeaderText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="@string/whatsapp_chat_generator" />
 
     </RelativeLayout>
@@ -592,7 +594,7 @@
                         android:fontFamily="@font/roboto_regular"
                         android:includeFontPadding="false"
                         android:text="@string/hide_header"
-                        android:textColor="@color/tweet_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_17sp" />
 
                     <!--android:text="@string/is_verify"-->
@@ -620,7 +622,7 @@
                         android:fontFamily="@font/roboto_regular"
                         android:includeFontPadding="false"
                         android:text="@string/hide_footer"
-                        android:textColor="@color/tweet_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_17sp" />
                     <!--android:text="@string/is_verify"-->
                 </LinearLayout>
@@ -646,7 +648,7 @@
                         android:fontFamily="@font/roboto_regular"
                         android:includeFontPadding="false"
                         android:text="Is Online?"
-                        android:textColor="@color/tweet_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_17sp" />
                     <!--android:text="@string/is_verify"-->
                 </LinearLayout>
@@ -670,7 +672,7 @@
                         android:drawablePadding="@dimen/_10dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="Android"
-                        android:textColor="@color/tweet_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_18sp" />
 
                     <RadioButton
@@ -684,7 +686,7 @@
                         android:drawablePadding="@dimen/_10dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="Apple"
-                        android:textColor="@color/tweet_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_18sp" />
                 </RadioGroup>
 
@@ -709,7 +711,7 @@
                     android:drawablePadding="@dimen/_10dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Edit Mode"
-                    android:textColor="@color/tweet_black"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_18sp" />
 
                 <RadioButton
@@ -723,7 +725,7 @@
                     android:drawablePadding="@dimen/_10dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="View Mode"
-                    android:textColor="@color/tweet_black"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_18sp" />
             </RadioGroup>
 

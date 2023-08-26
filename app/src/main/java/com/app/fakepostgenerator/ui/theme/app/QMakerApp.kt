@@ -1,10 +1,14 @@
 package com.app.fakepostgenerator.ui.theme.app
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.Context
 import android.os.Build
 import android.view.View
+import android.view.animation.AnimationUtils
+import com.app.fakepostgenerator.R
 import com.app.fakepostgenerator.ui.theme.utils.PreferenceUtils
 
 class QMakerApp : Application() {
@@ -54,6 +58,11 @@ class QMakerApp : Application() {
     fun Dp2px(dp: Float): Int {
         val scale = resources.displayMetrics.density
         return (dp * scale + 0.5f).toInt()
+    }
+    fun setAnimation(context: Context?, view: View) {
+//        view.setAnimation(AnimationUtils.loadAnimation(context,R.anim.bounce));
+        val clickAnimation = AnimationUtils.loadAnimation(context, R.anim.bounce)
+        view.startAnimation(clickAnimation)
     }
 
 }

@@ -48,9 +48,17 @@
         <activity
             android:name=".ui.theme.ui.menu.PrivacyPolicyActivity"
             android:exported="true"
+            android:screenOrientation="portrait" />\
+        <activity
+            android:name=".ui.theme.ui.menu.TermsConditionActivity"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.theme.ui.menu.MenuActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.theme.ui.menu.AboutActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity

@@ -1,6 +1,7 @@
 package com.app.fakepostgenerator.ui.theme.ui
 
 import android.Manifest
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -14,6 +15,7 @@ import android.text.Html
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
@@ -157,6 +159,7 @@ class InstagramPostActivity : BaseActivity(), View.OnClickListener {
         when (p0) {
             binding.imgBack -> {
                 onBackPressedDispatcher.onBackPressed()
+                setAnimation(this,binding.imgBack)
             }
             binding.imgUser -> {
                 if (isViewMode == false) {
@@ -928,5 +931,9 @@ class InstagramPostActivity : BaseActivity(), View.OnClickListener {
         val matcher = pattern.matcher(txt)
         return matcher.find()
     }
-
+    fun setAnimation(context: Context?, view: View) {
+//        view.setAnimation(AnimationUtils.loadAnimation(context,R.anim.bounce));
+        val clickAnimation = AnimationUtils.loadAnimation(context, R.anim.bounce)
+        view.startAnimation(clickAnimation)
+    }
 }

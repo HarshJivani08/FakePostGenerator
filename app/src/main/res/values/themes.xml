@@ -13,7 +13,6 @@
         <item name="android:layout_centerInParent">true</item>
     </style>
 
-
     <!--**********************-->
 
     <style name="FullButton">
@@ -112,6 +111,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:elevation">@dimen/_10dp</item>
+    <!--    <item name="android:background">@drawable/bg_edt_edit_post</item>-->
         <item name="android:background">@drawable/bg_edt_edit_post</item>
         <item name="android:outlineSpotShadowColor">@color/editetect_shadow_color</item>
 

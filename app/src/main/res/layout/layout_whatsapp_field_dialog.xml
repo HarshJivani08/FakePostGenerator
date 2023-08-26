@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/name"
-                    android:textColor="@color/edt_text_color" />
+                    android:textColor="@color/white" />
 
                 <EditText
                     android:id="@+id/etName"
@@ -53,7 +53,7 @@
                     android:clipToPadding="false"
                     android:paddingHorizontal="@dimen/_5dp"
                     android:paddingVertical="@dimen/_10dp"
-                    android:textColor="@color/et_text_color"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_16sp" />
             </LinearLayout>
 
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/message_break"
-                    android:textColor="@color/edt_text_color" />
+                    android:textColor="@color/white" />
 
                 <EditText
                     android:id="@+id/etMsgBreak"
@@ -85,7 +85,7 @@
                     android:paddingHorizontal="@dimen/_5dp"
                     android:paddingVertical="@dimen/_10dp"
                     android:text="Today"
-                    android:textColor="@color/et_text_color"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_16sp" />
             </LinearLayout>
 
@@ -155,7 +155,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
                         android:text="@string/message"
-                        android:textColor="@color/edt_text_color" />
+                        android:textColor="@color/white" />
 
                     <EditText
                         android:id="@+id/etSendText"
@@ -168,7 +168,7 @@
                         android:gravity="start"
                         android:paddingHorizontal="@dimen/_5dp"
                         android:paddingVertical="@dimen/_10dp"
-                        android:textColor="@color/et_text_color"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_16sp" />
                 </LinearLayout>
 
@@ -186,7 +186,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
                         android:text="@string/time"
-                        android:textColor="@color/edt_text_color" />
+                        android:textColor="@color/white" />
 
                     <EditText
                         android:id="@+id/etSendTime"
@@ -199,7 +199,7 @@
                         android:focusable="false"
                         android:paddingHorizontal="@dimen/_5dp"
                         android:paddingVertical="@dimen/_10dp"
-                        android:textColor="@color/et_text_color"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_16sp" />
                 </LinearLayout>
 
@@ -299,7 +299,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
                         android:text="@string/message"
-                        android:textColor="@color/edt_text_color" />
+                        android:textColor="@color/white" />
 
                     <EditText
                         android:id="@+id/etReceiveText"
@@ -312,7 +312,7 @@
                         android:gravity="start"
                         android:paddingHorizontal="@dimen/_5dp"
                         android:paddingVertical="@dimen/_10dp"
-                        android:textColor="@color/et_text_color"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_16sp" />
                 </LinearLayout>
 
@@ -330,7 +330,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
                         android:text="@string/time"
-                        android:textColor="@color/edt_text_color" />
+                        android:textColor="@color/white" />
 
                     <EditText
                         android:id="@+id/etReceiveTime"
@@ -343,7 +343,7 @@
                         android:focusable="false"
                         android:paddingHorizontal="@dimen/_5dp"
                         android:paddingVertical="@dimen/_10dp"
-                        android:textColor="@color/et_text_color"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_16sp" />
                 </LinearLayout>
 

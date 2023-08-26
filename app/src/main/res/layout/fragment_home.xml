@@ -88,7 +88,7 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/bg_new_post_home"
+                        android:background="@drawable/bg_insta_post_home"
                         android:paddingStart="@dimen/_30dp"
                         android:paddingTop="@dimen/_20dp">
 

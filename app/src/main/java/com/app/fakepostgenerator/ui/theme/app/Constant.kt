@@ -33,7 +33,7 @@ class Constant {
 
         const val PRIVACY_POLICY = "https://sites.google.com/view/socialmediapost-privacy-policy/home"
         const val TERMS_CONDITION = "https://sites.google.com/view/socialmediapost-terms/home"
-        const val EMAIL = "harshjivani140901@gmail.com"
+        const val EMAIL = "harshjivani1408901@gmail.com"
 
         const val PREMIUM = "premium"
 

@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/user_name"
-                    android:textColor="@color/edt_text_color" />
+                    android:textColor="@color/white" />
 
                 <EditText
                     android:id="@+id/etUserName"
@@ -57,7 +57,7 @@
                     android:paddingHorizontal="@dimen/_5dp"
                     android:paddingVertical="@dimen/_10dp"
                     android:maxLength="30"
-                    android:textColor="@color/et_text_color"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_16sp" />
             </LinearLayout>
 
@@ -84,7 +84,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
                         android:text="@string/post_date"
-                        android:textColor="@color/edt_text_color" />
+                        android:textColor="@color/white" />
 
                     <EditText
                         android:id="@+id/etPostDate"
@@ -97,7 +97,7 @@
                         android:focusable="false"
                         android:paddingHorizontal="@dimen/_5dp"
                         android:paddingVertical="@dimen/_10dp"
-                        android:textColor="@color/et_text_color"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_16sp" />
 
 
@@ -117,7 +117,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
                         android:text="@string/post_time"
-                        android:textColor="@color/edt_text_color"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_16sp" />
 
                     <EditText
@@ -131,7 +131,7 @@
                         android:focusable="false"
                         android:paddingHorizontal="@dimen/_5dp"
                         android:paddingVertical="@dimen/_10dp"
-                        android:textColor="@color/et_text_color"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_16sp" />
 
 
@@ -155,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/post_desciption"
-                    android:textColor="@color/edt_text_color" />
+                    android:textColor="@color/white" />
 
                 <EditText
                     android:id="@+id/etDesc"
@@ -170,7 +170,7 @@
                     android:paddingHorizontal="@dimen/_5dp"
                     android:paddingVertical="@dimen/_10dp"
                     android:text="This is a sample post text. @mentions, #hashtags, https://links.com are all automatically converted."
-                    android:textColor="@color/et_text_color"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_16sp" />
             </LinearLayout>
 
@@ -199,7 +199,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/like_count"
-                    android:textColor="@color/edt_text_color" />
+                    android:textColor="@color/white" />
 
                 <EditText
                     android:id="@+id/etLikeCount"
@@ -212,7 +212,7 @@
                     android:maxLength="5"
                     android:paddingHorizontal="@dimen/_5dp"
                     android:paddingVertical="@dimen/_10dp"
-                    android:textColor="@color/et_text_color"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_16sp" />
             </LinearLayout>
 
@@ -231,7 +231,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/comment_count"
-                    android:textColor="@color/edt_text_color" />
+                    android:textColor="@color/white" />
 
                 <EditText
                     android:id="@+id/etCommentCount"
@@ -244,7 +244,7 @@
                     android:maxLength="4"
                     android:paddingHorizontal="@dimen/_5dp"
                     android:paddingVertical="@dimen/_10dp"
-                    android:textColor="@color/et_text_color"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_16sp" />
             </LinearLayout>
 

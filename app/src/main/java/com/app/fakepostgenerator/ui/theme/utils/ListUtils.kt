@@ -31,7 +31,7 @@ class ListUtils {
         fun addMenuList(): ArrayList<DataMenu> {
             val data: ArrayList<DataMenu> = ArrayList()
 
-            data.add(DataMenu(R.drawable.ic_premium, "Get Premium"))
+//            data.add(DataMenu(R.drawable.ic_premium, "Get Premium"))
             data.add(DataMenu(R.drawable.ic_terms, "Term & Condition"))
             data.add(DataMenu(R.drawable.ic_privacy, "Privacy Policy"))
             data.add(DataMenu(R.drawable.ic_que, "FAQ’s"))
@@ -39,7 +39,7 @@ class ListUtils {
             data.add(DataMenu(R.drawable.ic_contact, "Contact Us"))
             data.add(DataMenu(R.drawable.ic_share_app, "Share App"))
             data.add(DataMenu(R.drawable.ic_rate, "Rate Us"))
-            data.add(DataMenu(R.drawable.ic_more_app, "More Apps"))
+//            data.add(DataMenu(R.drawable.ic_more_app, "More Apps"))
 
             return data
         }

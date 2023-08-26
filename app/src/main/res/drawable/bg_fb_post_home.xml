@@ -8,13 +8,13 @@
       android:pathData="M315,0L20,0A20,20 0,0 0,0 20L0,125A20,20 0,0 0,20 145L315,145A20,20 0,0 0,335 125L335,20A20,20 0,0 0,315 0z">
     <aapt:attr name="android:fillColor">
       <gradient 
-          android:startX="102.5"
-          android:startY="15.5"
-          android:endX="271"
-          android:endY="126.5"
+          android:startX="32.5"
+          android:startY="-11"
+          android:endX="318"
+          android:endY="145"
           android:type="linear">
-        <item android:offset="0" android:color="#FFFFBFD1"/>
-        <item android:offset="1" android:color="#FFFF98B5"/>
+        <item android:offset="0" android:color="#FF9DDBFE"/>
+        <item android:offset="0.97" android:color="#FF2CB3FF"/>
       </gradient>
     </aapt:attr>
   </path>
@@ -37,15 +37,15 @@
       android:strokeColor="#292D32"
       android:strokeLineCap="round"/>
   <path
-      android:pathData="M299.5,21.5m-8.75,0a8.75,8.75 0,1 1,17.5 0a8.75,8.75 0,1 1,-17.5 0"
+      android:pathData="M168.5,114.5m-6.75,0a6.75,6.75 0,1 1,13.5 0a6.75,6.75 0,1 1,-13.5 0"
       android:strokeWidth="1.5"
       android:fillColor="#00000000">
     <aapt:attr name="android:strokeColor">
       <gradient 
-          android:startX="299.5"
-          android:startY="12"
-          android:endX="299.5"
-          android:endY="31"
+          android:startX="168.5"
+          android:startY="107"
+          android:endX="168.5"
+          android:endY="122"
           android:type="linear">
         <item android:offset="0" android:color="#99FAFAFA"/>
         <item android:offset="1" android:color="#19FAFAFA"/>
@@ -53,15 +53,15 @@
     </aapt:attr>
   </path>
   <path
-      android:pathData="M136,106m-6.25,0a6.25,6.25 0,1 1,12.5 0a6.25,6.25 0,1 1,-12.5 0"
+      android:pathData="M306.5,26.5m-6.75,0a6.75,6.75 0,1 1,13.5 0a6.75,6.75 0,1 1,-13.5 0"
       android:strokeWidth="1.5"
       android:fillColor="#00000000">
     <aapt:attr name="android:strokeColor">
       <gradient 
-          android:startX="136"
-          android:startY="99"
-          android:endX="136"
-          android:endY="113"
+          android:startX="306.5"
+          android:startY="19"
+          android:endX="306.5"
+          android:endY="34"
           android:type="linear">
         <item android:offset="0" android:color="#99FAFAFA"/>
         <item android:offset="1" android:color="#19FAFAFA"/>

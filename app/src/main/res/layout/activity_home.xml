@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/app_bg"
     tools:context=".ui.theme.ui.HomeActivity">
 
     <RelativeLayout
@@ -49,7 +49,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/_15dp"
             android:layout_marginEnd="@dimen/_20dp"
-            app:cardBackgroundColor="@color/black"
+            app:cardBackgroundColor="@color/app_bg"
             app:cardElevation="@dimen/_20dp">
 
             <!--android:background="@drawable/bg_icon"-->
@@ -85,7 +85,7 @@
                     android:id="@+id/lInstagramPost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_10dp"
+                    android:layout_marginTop="@dimen/_50dp"
                     app:cardCornerRadius="@dimen/_20sp">
 
                     <RelativeLayout
@@ -93,49 +93,52 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_insta_post_home">
 
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:orientation="vertical"-->
-<!--                            android:paddingVertical="@dimen/_40dp">-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_toEndOf="@+id/imgInsta"
+                            android:paddingHorizontal="@dimen/_15dp"
+                            android:paddingVertical="@dimen/_40dp">
 
-<!--                            <TextView-->
-<!--                                android:id="@+id/txtCreate"-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:fontFamily="@font/roboto_regular"-->
-<!--                                android:text="@string/create"-->
-<!--                                android:textColor="@color/black_21"-->
-<!--                                android:textSize="@dimen/_20sp" />-->
+                            <TextView
+                                android:id="@+id/txtCreate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="@string/create"
+                                android:textColor="@color/black_21"
+                                android:textSize="@dimen/_20sp" />
 
-<!--                            <TextView-->
-<!--                                android:id="@+id/txtNewPost"-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_below="@id/txtCreate"-->
-<!--                                android:fontFamily="@font/roboto_bold"-->
-<!--                                android:text="Instagram Post"-->
-<!--                                android:textColor="@color/black_35"-->
-<!--                                android:textSize="@dimen/_22sp" />-->
+                            <TextView
+                                android:id="@+id/txtNewPost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtCreate"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="Instagram Post"
+                                android:textColor="@color/black_35"
+                                android:textSize="@dimen/_22sp" />
 
-<!--                            &lt;!&ndash;                        <ImageView&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_alignParentStart="true"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_alignParentBottom="true"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_marginVertical="@dimen/_20dp"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:src="@drawable/ic_arrow_right" />&ndash;&gt;-->
+                            <!--                        <ImageView-->
+                            <!--                            android:layout_width="wrap_content"-->
+                            <!--                            android:layout_height="wrap_content"-->
+                            <!--                            android:layout_alignParentStart="true"-->
+                            <!--                            android:layout_alignParentBottom="true"-->
+                            <!--                            android:layout_marginVertical="@dimen/_20dp"-->
+                            <!--                            android:src="@drawable/ic_arrow_right" />-->
 
-<!--                            &lt;!&ndash;                        <ImageView&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_alignParentEnd="true"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:layout_alignParentBottom="true"&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            android:src="@drawable/ic_new_post_home" />&ndash;&gt;-->
+                            <!--                        <ImageView-->
+                            <!--                            android:layout_width="wrap_content"-->
+                            <!--                            android:layout_height="wrap_content"-->
+                            <!--                            android:layout_alignParentEnd="true"-->
+                            <!--                            android:layout_alignParentBottom="true"-->
+                            <!--                            android:src="@drawable/ic_new_post_home" />-->
 
-<!--                        </LinearLayout>-->
+                        </LinearLayout>
 
                         <ImageView
+                            android:id="@+id/imgInsta"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -150,20 +153,22 @@
                     android:id="@+id/lFacebookPost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_10dp"
+                    android:layout_marginTop="@dimen/_30dp"
                     app:cardCornerRadius="@dimen/_20sp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_review_post_home"
-                        android:paddingHorizontal="@dimen/_30dp">
+                        android:background="@drawable/bg_fb_post_home"
+                        >
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:paddingVertical="@dimen/_40dp">
+                            android:paddingHorizontal="@dimen/_15dp"
+                            android:layout_toEndOf="@+id/imgFb"
+                            android:layout_centerVertical="true">
 
                             <TextView
                                 android:id="@+id/txtCreateReview"
@@ -183,29 +188,15 @@
                                 android:textColor="@color/black_35"
                                 android:textSize="@dimen/_22sp" />
 
-                            <!--                        <ImageView-->
-                            <!--                            android:layout_width="wrap_content"-->
-                            <!--                            android:layout_height="wrap_content"-->
-                            <!--                            android:layout_alignParentStart="true"-->
-                            <!--                            android:layout_alignParentBottom="true"-->
-                            <!--                            android:layout_marginBottom="@dimen/_20dp"-->
-                            <!--                            android:src="@drawable/ic_arrow_right" />-->
-
-                            <!--                        <ImageView-->
-                            <!--                            android:layout_width="wrap_content"-->
-                            <!--                            android:layout_height="wrap_content"-->
-                            <!--                            android:layout_alignParentEnd="true"-->
-                            <!--                            android:layout_alignParentBottom="true"-->
-                            <!--                            android:src="@drawable/ic_review_post_home" />-->
 
                         </LinearLayout>
 
                         <ImageView
-                            android:layout_width="@dimen/_45dp"
-                            android:layout_height="@dimen/_45dp"
+                            android:id="@+id/imgFb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_alignParentEnd="true"
-                            android:src="@drawable/ic_facebook" />
+                            android:src="@drawable/img_fb_home" />
 
                     </RelativeLayout>
 
@@ -216,21 +207,22 @@
                     android:id="@+id/lTweeterPost"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="@dimen/_10dp"
+                    android:layout_marginTop="@dimen/_30dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/_20sp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_social_media_post_home"
-                        android:paddingHorizontal="@dimen/_30dp">
+                        android:background="@drawable/bg_tweeter_post_home">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:paddingVertical="@dimen/_40dp">
+                            android:paddingHorizontal="@dimen/_15dp"
+                            android:layout_toEndOf="@id/imgTweeter"
+                            android:layout_centerVertical="true">
 
                             <TextView
                                 android:id="@+id/txtCreateFakePost"
@@ -251,30 +243,16 @@
                                 android:textColor="@color/black_35"
                                 android:textSize="@dimen/_22sp" />
 
-                            <!--                        <ImageView-->
-                            <!--                            android:layout_width="wrap_content"-->
-                            <!--                            android:layout_height="wrap_content"-->
-                            <!--                            android:layout_alignParentStart="true"-->
-                            <!--                            android:layout_alignParentBottom="true"-->
-                            <!--                            android:layout_marginVertical="@dimen/_20dp"-->
-                            <!--                            android:src="@drawable/ic_arrow_right" />-->
 
-                            <!--                        <ImageView-->
-                            <!--                            android:id="@+id/imgSocialMedia"-->
-                            <!--                            android:layout_width="wrap_content"-->
-                            <!--                            android:layout_height="wrap_content"-->
-                            <!--                            android:layout_alignParentEnd="true"-->
-                            <!--                            android:layout_alignParentBottom="true"-->
-                            <!--                            android:src="@drawable/ic_social_media_post_home" />-->
 
                         </LinearLayout>
 
                         <ImageView
-                            android:layout_width="@dimen/_45dp"
-                            android:layout_height="@dimen/_45dp"
+                            android:id="@+id/imgTweeter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_alignParentEnd="true"
-                            android:src="@drawable/ic_twitter" />
+                            android:src="@drawable/img_tweeter_home" />
 
 
                     </RelativeLayout>
@@ -288,19 +266,21 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="@dimen/_10dp"
                     android:layout_weight="1"
-                    app:cardCornerRadius="@dimen/_20sp">
+                    app:cardCornerRadius="@dimen/_20sp"
+                    android:visibility="gone">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_quote_post_home"
-                        android:paddingHorizontal="@dimen/_30dp">
+                        android:background="@drawable/bg_whatsapp_post_home">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:paddingVertical="@dimen/_40dp">
+                            android:paddingHorizontal="@dimen/_15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/imgWhatsapp">
 
                             <TextView
                                 android:id="@+id/txtCreateQuote"
@@ -332,11 +312,11 @@
                         </LinearLayout>
 
                         <ImageView
-                            android:layout_width="@dimen/_45dp"
-                            android:layout_height="@dimen/_45dp"
+                            android:id="@+id/imgWhatsapp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_alignParentEnd="true"
-                            android:src="@drawable/ic_whatsapp" />
+                            android:src="@drawable/img_whatsapp_home" />
 
                     </RelativeLayout>
 

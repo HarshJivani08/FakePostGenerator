@@ -1,10 +1,12 @@
 package com.app.fakepostgenerator.ui.theme.ui.menu
 
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.fakepostgenerator.BuildConfig
 import com.app.fakepostgenerator.R
@@ -54,6 +56,7 @@ class MenuActivity : BaseActivity(), View.OnClickListener,
         when (p0?.id) {
             R.id.imgCancel -> {
                 onBackPressed()
+                setAnimation(this,binding.imgCancel)
                // activityCircularReveal.unRevealActivity(this)
             }
         }
@@ -66,38 +69,37 @@ class MenuActivity : BaseActivity(), View.OnClickListener,
 
     override fun onMenuItemClick(data: DataMenu, position: Int) {
         when (position) {
-            0 -> {
+//            0 -> {
                 //get premium
                /* launchInApp()*/
 //                val intent =Intent(applicationContext,PremiumActivity::class.java)
 //                startActivity(intent)
-            }
-            1 -> {
+//            }
+            0 -> {
                 //terms & condition
                 val intent = Intent(applicationContext, TermsConditionActivity::class.java)
                 startActivity(intent)
             }
-            2 -> {
+            1 -> {
                 //privacy policy
                 val intent = Intent(applicationContext, PrivacyPolicyActivity::class.java)
                 startActivity(intent)
             }
-            3 -> {
+            2 -> {
                //FAQ's
 //               val intent = Intent(applicationContext,FaqActivity::class.java)
 //               startActivity(intent)
             }
-            4 -> {
+            3 -> {
                 //about us
                 val intent = Intent(applicationContext, AboutActivity::class.java)
                 startActivity(intent)
             }
-            5 -> {
+            4 -> {
                 //contact us
                 startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:${Constant.EMAIL}")))
             }
-            6 -> {
-
+            5 -> {
                 //share App
                 try {
                     val shareIntent = Intent(Intent.ACTION_SEND)
@@ -115,7 +117,7 @@ class MenuActivity : BaseActivity(), View.OnClickListener,
                 }
             }
 
-            7 -> {
+            6 -> {
                 // rate us
                 val uri: Uri = Uri.parse("market://details?id=$packageName")
                 val goToMarket = Intent(Intent.ACTION_VIEW, uri)
@@ -138,7 +140,7 @@ class MenuActivity : BaseActivity(), View.OnClickListener,
                     )
                 }
             }
-            8 ->{
+            7 ->{
 //                val intent =Intent(applicationContext,AppListActivity::class.java)
 //                startActivity(intent)
             }
@@ -147,7 +149,11 @@ class MenuActivity : BaseActivity(), View.OnClickListener,
         }
 
     }
-
+    fun setAnimation(context: Context?, view: View) {
+//        view.setAnimation(AnimationUtils.loadAnimation(context,R.anim.bounce));
+        val clickAnimation = AnimationUtils.loadAnimation(context, R.anim.bounce)
+        view.startAnimation(clickAnimation)
+    }
 
 
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
->
+    android:background="@color/app_inside_bg_color">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -23,7 +23,8 @@
             style="@style/HeaderText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/instagram_post_generator" />
+            android:text="@string/instagram_post_generator"
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 
@@ -51,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/_20dp"
                 android:background="@drawable/bg_instagram_post_review"
+                android:elevation="@dimen/_10dp"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -102,7 +104,6 @@
                                 android:textSize="@dimen/_16sp" />
 
 
-
                             <ImageView
                                 android:id="@+id/imgVerified"
                                 android:layout_width="@dimen/_15dp"
@@ -127,13 +128,14 @@
                                 android:layout_height="@dimen/_15dp"
                                 android:layout_gravity="center_vertical"
                                 android:src="@drawable/ic_edit_post" />
+
                             <TextView
                                 android:id="@+id/txtDescription"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:ellipsize="end"
                                 android:fontFamily="@font/roboto_regular"
                                 android:maxLines="1"
-                                android:ellipsize="end"
                                 android:text="New York, USA"
                                 android:textColor="@color/insta_light_grey_text"
                                 android:textSize="@dimen/_13sp" />
@@ -149,8 +151,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_more"
                         android:padding="@dimen/_5dp"
+                        android:src="@drawable/ic_more"
                         app:tint="@color/insta_text_color" />
                 </RelativeLayout>
 
@@ -540,9 +542,9 @@
                     android:fontFamily="@font/roboto_medium"
                     android:maxLength="30"
                     android:text="@string/edit"
-                    android:textColor="@color/edt_text_color"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_18sp" />
-
+                <!-- android:textColor="@color/edt_text_color"-->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -562,9 +564,9 @@
                         android:layout_marginStart="@dimen/_10dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="@string/is_verify"
-                        android:textColor="@color/tweet_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_17sp" />
-
+                    <!--           android:textColor="@color/tweet_black"-->
                     <!--android:text="@string/is_verify"-->
 
                 </LinearLayout>
@@ -588,9 +590,9 @@
                         android:layout_marginStart="@dimen/_10dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="@string/is_someone_tagged"
-                        android:textColor="@color/tweet_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_17sp" />
-
+                    <!--android:textColor="@color/tweet_black"-->
                     <!--android:text="@string/is_verify"-->
 
                 </LinearLayout>
@@ -614,7 +616,7 @@
                         android:layout_marginStart="@dimen/_10dp"
                         android:fontFamily="@font/roboto_regular"
                         android:text="@string/has_an_instagram_story"
-                        android:textColor="@color/tweet_black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_17sp" />
 
                 </LinearLayout>
@@ -625,7 +627,9 @@
                     android:layout_marginTop="@dimen/_15dp"
                     android:fontFamily="@font/roboto_regular"
                     android:hint="@string/image_count"
-                    android:textColor="@color/edt_text_color" />
+                    android:textColor="@color/white"/>
+
+                <!--android:textColor="@color/edt_text_color"-->
 
                 <EditText
                     android:id="@+id/etPostCount"
@@ -639,9 +643,9 @@
                     android:focusable="false"
                     android:paddingHorizontal="@dimen/_5dp"
                     android:paddingVertical="@dimen/_10dp"
-                    android:textColor="@color/et_text_color"
+                   android:textColor="@color/white"
                     android:textSize="@dimen/_16sp" />
-
+<!-- android:textColor="@color/et_text_color"-->
 
             </LinearLayout>
 
@@ -665,9 +669,9 @@
                     android:drawablePadding="@dimen/_10dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/edit_mode"
-                    android:textColor="@color/tweet_black"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_18sp" />
-
+                <!--    android:textColor="@color/tweet_black"-->
                 <RadioButton
                     android:id="@+id/rdView"
                     android:layout_width="wrap_content"
@@ -679,7 +683,7 @@
                     android:drawablePadding="@dimen/_10dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/view_mode"
-                    android:textColor="@color/tweet_black"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/_18sp" />
             </RadioGroup>
 
