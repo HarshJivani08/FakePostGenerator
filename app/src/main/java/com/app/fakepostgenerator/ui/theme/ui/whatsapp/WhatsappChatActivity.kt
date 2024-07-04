@@ -24,18 +24,14 @@ import com.app.fakepostgenerator.databinding.ActivityWhatsappChatBinding
 import com.app.fakepostgenerator.databinding.LayoutWhatsappFieldDialogBinding
 import com.app.fakepostgenerator.ui.theme.app.BaseActivity
 import com.app.fakepostgenerator.ui.theme.app.Constant
-import com.app.fakepostgenerator.ui.theme.app.QMakerApp
+import com.app.fakepostgenerator.ui.theme.app.AppController
 import com.app.fakepostgenerator.ui.theme.dialog.SimpleImagePickerBottomDialog
-import com.app.fakepostgenerator.ui.theme.model.DataRecentPost
 import com.app.fakepostgenerator.ui.theme.model.DataWhatsappChat
 import com.app.fakepostgenerator.ui.theme.utils.DateUtils
 import com.app.fakepostgenerator.ui.theme.utils.ImageUtils
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.grewon.qmaker.ui.fake_post.adapter.AdapterWhatsappChat
-import com.grewon.qmaker.ui.recent_design.RecentDesignFragment
 import com.app.fakepostgenerator.ui.theme.utils.ListUtils
 import java.io.File
 import java.io.FileNotFoundException
@@ -77,15 +73,15 @@ class WhatsappChatActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun setPreData() {
-        if (preferenceUtils?.getUser() != null) {
-            userName = preferenceUtils!!.getUser()!!.name.toString()
-            binding.txtUserName.setText(userName)
-            binding.txtUserNameIos.setText(userName)
-            if (!preferenceUtils?.getUser()!!.image.isNullOrEmpty()) {
-                Glide.with(this@WhatsappChatActivity).load(QMakerApp.preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgUser)
-                Glide.with(this@WhatsappChatActivity).load(QMakerApp.preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgUserIos)
-            }
-        }
+//        if (preferenceUtils?.getUser() != null) {
+//            userName = preferenceUtils!!.getUser()!!.name.toString()
+//            binding.txtUserName.setText(userName)
+//            binding.txtUserNameIos.setText(userName)
+//            if (!preferenceUtils?.getUser()!!.image.isNullOrEmpty()) {
+//                Glide.with(this@WhatsappChatActivity).load(AppController.preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgUser)
+//                Glide.with(this@WhatsappChatActivity).load(AppController.preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgUserIos)
+//            }
+//        }
     }
 
     private fun setData() {
@@ -530,24 +526,24 @@ class WhatsappChatActivity : BaseActivity(), View.OnClickListener {
             val output = FileOutputStream(file)
 
             /*------------------------------------*/
-            if (isEdit) {
-
-                try {
-                    RecentDesignFragment.objectList = Gson().fromJson(
-                        preferenceUtils?.sharedPreferences?.getString(
-                            Constant.RECENT_POST, ""
-                        ), object : TypeToken<List<DataRecentPost>>() {}.type
-                    )
-                } catch (e: Exception) {
-                    RecentDesignFragment.objectList = arrayListOf()
-                }
-
-                RecentDesignFragment.objectList.add(DataRecentPost(file.absolutePath.toString()))
-
-                val postList = Gson().toJson(RecentDesignFragment.objectList)
-
-                preferenceUtils?.saveRecentPost(postList)
-            }
+//            if (isEdit) {
+//
+//                try {
+//                    RecentDesignFragment.objectList = Gson().fromJson(
+//                        preferenceUtils?.sharedPreferences?.getString(
+//                            Constant.RECENT_POST, ""
+//                        ), object : TypeToken<List<DataRecentPost>>() {}.type
+//                    )
+//                } catch (e: Exception) {
+//                    RecentDesignFragment.objectList = arrayListOf()
+//                }
+//
+//                RecentDesignFragment.objectList.add(DataRecentPost(file.absolutePath.toString()))
+//
+//                val postList = Gson().toJson(RecentDesignFragment.objectList)
+//
+//                preferenceUtils?.saveRecentPost(postList)
+//            }
             isEdit = false
 
             /*------------------------------------*/

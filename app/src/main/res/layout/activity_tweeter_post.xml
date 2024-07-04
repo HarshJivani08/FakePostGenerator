@@ -632,7 +632,7 @@
                             android:inputType="number"
                             android:paddingHorizontal="@dimen/_5dp"
                             android:paddingVertical="@dimen/_10dp"
-                            android:textColor="@color/et_text_color"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/_16sp" />
 
                         <!--                        <com.google.android.material.textfield.TextInputLayout-->
@@ -693,7 +693,7 @@
                             android:inputType="number"
                             android:paddingHorizontal="@dimen/_5dp"
                             android:paddingVertical="@dimen/_10dp"
-                            android:textColor="@color/et_text_color"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/_16sp" />
 
 
@@ -708,7 +708,6 @@
                     android:clipChildren="false"
                     android:clipToPadding="false"
                     android:orientation="horizontal">
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -737,7 +736,7 @@
                             android:inputType="number"
                             android:paddingHorizontal="@dimen/_5dp"
                             android:paddingVertical="@dimen/_10dp"
-                            android:textColor="@color/et_text_color"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/_16sp" />
 
 
@@ -771,7 +770,7 @@
                             android:inputType="number"
                             android:paddingHorizontal="@dimen/_5dp"
                             android:paddingVertical="@dimen/_10dp"
-                            android:textColor="@color/et_text_color"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/_16sp" />
 
                     </LinearLayout>

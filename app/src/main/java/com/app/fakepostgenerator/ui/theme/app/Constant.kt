@@ -31,8 +31,8 @@ class Constant {
 
         const val FIREBASE_TOKEN = "fb_token"
 
-        const val PRIVACY_POLICY = "https://sites.google.com/view/socialmediapost-privacy-policy/home"
-        const val TERMS_CONDITION = "https://sites.google.com/view/socialmediapost-terms/home"
+        const val PRIVACY_POLICY = "https://sites.google.com/view/social-media-fake-post/privacy-policy"
+        const val TERMS_CONDITION = "https://sites.google.com/view/social-media-fake-post/terms"
         const val EMAIL = "harshjivani1408901@gmail.com"
 
         const val PREMIUM = "premium"
@@ -41,7 +41,6 @@ class Constant {
 
         const val APP_DATA: String = "notes_list"
 
-       const val IN_APP_PRODUCT_ID = "app.qmaker.lifetime"
 //        const val IN_APP_PRODUCT_ID = "product.purchase.lifetime"
  //       const val IN_APP_PRODUCT_ID = "android.test.purchased"
 

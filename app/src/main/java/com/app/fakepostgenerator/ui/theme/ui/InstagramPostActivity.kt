@@ -28,17 +28,13 @@ import com.app.fakepostgenerator.databinding.ActivityInstagramPostBinding
 import com.app.fakepostgenerator.databinding.LayoutInstagramFieldDialogBinding
 import com.app.fakepostgenerator.ui.theme.app.BaseActivity
 import com.app.fakepostgenerator.ui.theme.app.Constant
-import com.app.fakepostgenerator.ui.theme.app.QMakerApp
+import com.app.fakepostgenerator.ui.theme.app.AppController
 import com.app.fakepostgenerator.ui.theme.dialog.SimpleImagePickerBottomDialog
 import com.app.fakepostgenerator.ui.theme.model.DataRecentPost
 import com.app.fakepostgenerator.ui.theme.utils.DateUtils
 import com.app.fakepostgenerator.ui.theme.utils.ImageUtils
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.grewon.qmaker.ui.recent_design.RecentDesignFragment
-
 import com.app.fakepostgenerator.ui.theme.utils.ListUtils
 import com.app.fakepostgenerator.ui.theme.utils.prettyCount
 import java.io.File
@@ -586,13 +582,13 @@ class InstagramPostActivity : BaseActivity(), View.OnClickListener {
 
     private fun setPreData() {
         //post text
-        if (preferenceUtils?.getUser() != null) {
-            binding.txtUserName.setText(preferenceUtils!!.getUser()!!.id)
-            if (!QMakerApp.preferenceUtils?.getUser()!!.image.isNullOrEmpty()) {
-                Glide.with(this@InstagramPostActivity).load(QMakerApp.preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgUser)
-                Glide.with(this@InstagramPostActivity).load(QMakerApp.preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgOwnuser)
-            }
-        }
+//        if (preferenceUtils?.getUser() != null) {
+//            binding.txtUserName.setText(preferenceUtils!!.getUser()!!.id)
+//            if (!AppController.preferenceUtils?.getUser()!!.image.isNullOrEmpty()) {
+//                Glide.with(this@InstagramPostActivity).load(AppController.preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgUser)
+//                Glide.with(this@InstagramPostActivity).load(AppController.preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgOwnuser)
+//            }
+//        }
 
 //        val postText = applicationContext.getString(R.string.data_post_text, binding.etUserName.text, "This is a sample post text. @mentions, #hashtags, https://links.com are all automatically converted.").makeSpanColorBetween('[', ']', getColor(this@InstagramPostActivity, R.color.black))
 //        binding.txtPostText.setLinkText(postText.toString())
@@ -875,24 +871,24 @@ class InstagramPostActivity : BaseActivity(), View.OnClickListener {
 
             /*------------------------------------*/
 
-            if (isEdit) {
-
-                try {
-                    RecentDesignFragment.objectList = Gson().fromJson(
-                        preferenceUtils?.sharedPreferences?.getString(
-                            Constant.RECENT_POST, ""
-                        ), object : TypeToken<List<DataRecentPost>>() {}.type
-                    )
-                } catch (e: Exception) {
-                    RecentDesignFragment.objectList = arrayListOf()
-                }
-
-                RecentDesignFragment.objectList.add(DataRecentPost(file.absolutePath.toString()))
-
-                val postList = Gson().toJson(RecentDesignFragment.objectList)
-
-                preferenceUtils?.saveRecentPost(postList)
-            }
+//            if (isEdit) {
+//
+//                try {
+//                    RecentDesignFragment.objectList = Gson().fromJson(
+//                        preferenceUtils?.sharedPreferences?.getString(
+//                            Constant.RECENT_POST, ""
+//                        ), object : TypeToken<List<DataRecentPost>>() {}.type
+//                    )
+//                } catch (e: Exception) {
+//                    RecentDesignFragment.objectList = arrayListOf()
+//                }
+//
+//                RecentDesignFragment.objectList.add(DataRecentPost(file.absolutePath.toString()))
+//
+//                val postList = Gson().toJson(RecentDesignFragment.objectList)
+//
+//                preferenceUtils?.saveRecentPost(postList)
+//            }
 
             isEdit = false
 

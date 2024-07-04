@@ -15,6 +15,7 @@ import android.provider.Settings
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.CompoundButton
@@ -29,7 +30,7 @@ import com.app.fakepostgenerator.databinding.ActivityTweeterPostBinding
 import com.app.fakepostgenerator.databinding.LayoutTweeterFieldDialogBinding
 import com.app.fakepostgenerator.ui.theme.app.BaseActivity
 import com.app.fakepostgenerator.ui.theme.app.Constant
-import com.app.fakepostgenerator.ui.theme.app.QMakerApp
+import com.app.fakepostgenerator.ui.theme.app.AppController
 import com.app.fakepostgenerator.ui.theme.dialog.SimpleImagePickerBottomDialog
 import com.app.fakepostgenerator.ui.theme.model.DataRecentPost
 import com.app.fakepostgenerator.ui.theme.utils.DateUtils
@@ -37,9 +38,6 @@ import com.app.fakepostgenerator.ui.theme.utils.ImageUtils
 import com.app.fakepostgenerator.ui.theme.utils.prettyCount
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.grewon.qmaker.ui.recent_design.RecentDesignFragment
 import droidninja.filepicker.FilePickerBuilder
 import droidninja.filepicker.FilePickerConst.KEY_SELECTED_MEDIA
 import droidninja.filepicker.FilePickerConst.REQUEST_CODE_PHOTO
@@ -87,31 +85,33 @@ class TweeterPostActivity : BaseActivity(), View.OnClickListener {
 
     private fun preSetData() {
         // name
-        if (preferenceUtils?.getUser() != null) {
-
-            name = preferenceUtils!!.getUser()!!.name.toString()
-
-            var txtName = name
-            if (txtName.length > 12) {
-                txtName = txtName.substring(0, 12) + getString(R.string.three_dots)
-            }
-            binding.txtName.setText(txtName)
-            // user name
-            userName = preferenceUtils!!.getUser()?.id.toString()
-
-            var text = userName
-            if (text.length > 15) {
-                text = text.substring(0, 15) + getString(R.string.three_dots)
-            }
-
-            binding.txtUserName.text = "@$text"
-            if (!preferenceUtils?.getUser()!!.image.isNullOrEmpty()) {
-                Glide.with(this@TweeterPostActivity).load(QMakerApp.preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgUser)
-            }
-        } else {
-            binding.txtName.setText("Anna Marina")
-            binding.txtUserName.text = ("@annamarina")
-        }
+//        if (preferenceUtils?.getUser() != null) {
+//
+//            name = preferenceUtils!!.getUser()!!.name.toString()
+//
+//            var txtName = name
+//            if (txtName.length > 12) {
+//                txtName = txtName.substring(0, 12) + getString(R.string.three_dots)
+//            }
+//            binding.txtName.setText(txtName)
+//            // user name
+//            userName = preferenceUtils!!.getUser()?.id.toString()
+//
+//            var text = userName
+//            if (text.length > 15) {
+//                text = text.substring(0, 15) + getString(R.string.three_dots)
+//            }
+//
+//            binding.txtUserName.text = "@$text"
+//            if (!preferenceUtils?.getUser()!!.image.isNullOrEmpty()) {
+//                Glide.with(this@TweeterPostActivity).load(AppController.preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgUser)
+//            }
+//        } else {
+//            binding.txtName.setText("Anna Marina")
+//            binding.txtUserName.text = ("@annamarina")
+//        }
+        binding.txtName.setText("Anna Marina")
+        binding.txtUserName.text = ("@annamarina")
 
         // postDateTime
         val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm a")
@@ -176,7 +176,6 @@ class TweeterPostActivity : BaseActivity(), View.OnClickListener {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 
             override fun afterTextChanged(s: Editable) {}
-
         })
 
         // retweet count
@@ -191,7 +190,6 @@ class TweeterPostActivity : BaseActivity(), View.OnClickListener {
                     binding.txtRetweetCount.visibility = View.GONE
                 }
             }
-
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 
             override fun afterTextChanged(s: Editable) {}
@@ -592,23 +590,23 @@ class TweeterPostActivity : BaseActivity(), View.OnClickListener {
 
             /*------------------------------------*/
 
-            if (isEdit) {
-                try {
-                    RecentDesignFragment.objectList = Gson().fromJson(
-                        preferenceUtils?.sharedPreferences?.getString(
-                            Constant.RECENT_POST, ""
-                        ), object : TypeToken<List<DataRecentPost>>() {}.type
-                    )
-                } catch (e: Exception) {
-                    RecentDesignFragment.objectList = arrayListOf()
-                }
-
-                RecentDesignFragment.objectList.add(DataRecentPost(file.absolutePath.toString()))
-
-                val postList = Gson().toJson(RecentDesignFragment.objectList)
-
-                preferenceUtils?.saveRecentPost(postList)
-            }
+//            if (isEdit) {
+//                try {
+//                    RecentDesignFragment.objectList = Gson().fromJson(
+//                        preferenceUtils?.sharedPreferences?.getString(
+//                            Constant.RECENT_POST, ""
+//                        ), object : TypeToken<List<DataRecentPost>>() {}.type
+//                    )
+//                } catch (e: Exception) {
+//                    RecentDesignFragment.objectList = arrayListOf()
+//                }
+//
+//                RecentDesignFragment.objectList.add(DataRecentPost(file.absolutePath.toString()))
+//
+//                val postList = Gson().toJson(RecentDesignFragment.objectList)
+//
+//                preferenceUtils?.saveRecentPost(postList)
+//            }
 
             isEdit = false
 

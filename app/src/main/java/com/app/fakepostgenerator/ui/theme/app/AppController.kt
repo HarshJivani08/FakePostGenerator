@@ -1,6 +1,5 @@
 package com.app.fakepostgenerator.ui.theme.app
 
-import android.annotation.SuppressLint
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -11,13 +10,13 @@ import android.view.animation.AnimationUtils
 import com.app.fakepostgenerator.R
 import com.app.fakepostgenerator.ui.theme.utils.PreferenceUtils
 
-class QMakerApp : Application() {
+class AppController : Application() {
 
     private val view: View? = null
 
     companion object {
 
-        lateinit var instance: QMakerApp
+        lateinit var instance: AppController
 
         var isOpenInFailed:Boolean=false
 
@@ -25,7 +24,7 @@ class QMakerApp : Application() {
 
         var PLAY_STORE_BASE = "https://play.google.com/store/apps/details?id="
 
-        fun getAppInstance(): QMakerApp {
+        fun getAppInstance(): AppController {
             return instance
         }
     }

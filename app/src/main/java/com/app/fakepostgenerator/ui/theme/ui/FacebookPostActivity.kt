@@ -31,9 +31,6 @@ import com.app.fakepostgenerator.ui.theme.utils.DateUtils
 import com.app.fakepostgenerator.ui.theme.utils.prettyCount
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.grewon.qmaker.ui.recent_design.RecentDesignFragment
 import droidninja.filepicker.FilePickerBuilder
 import droidninja.filepicker.FilePickerConst
 import droidninja.filepicker.utils.ContentUriUtils
@@ -73,14 +70,16 @@ class FacebookPostActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun setPreData() {
-        if (preferenceUtils?.getUser() != null) {
-            binding.txtUserName.setText(preferenceUtils!!.getUser()!!.name)
-            if (!preferenceUtils?.getUser()!!.image.isNullOrEmpty()) {
-                Glide.with(this@FacebookPostActivity).load(preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgUser)
-            }
-        } else {
-            binding.txtUserName.setText("Anna Marina")
-        }
+//        if (preferenceUtils?.getUser() != null) {
+//            binding.txtUserName.setText(preferenceUtils!!.getUser()!!.name)
+//            if (!preferenceUtils?.getUser()!!.image.isNullOrEmpty()) {
+//                Glide.with(this@FacebookPostActivity).load(preferenceUtils?.getUser()!!.image).circleCrop().into(binding.imgUser)
+//            }
+//        } else {
+//            binding.txtUserName.setText("Anna Marina")
+//        }
+        binding.txtUserName.setText("Anna Marina")
+
         commentCount = 10
         binding.txtCommentCount.text = "$commentCount comments"
         binding.txtLikeCount.text = likeCount.toString()
@@ -662,24 +661,24 @@ class FacebookPostActivity : BaseActivity(), View.OnClickListener {
 
             /*------------------------------------*/
 
-            if (isEdit) {
-
-                try {
-                    RecentDesignFragment.objectList = Gson().fromJson(
-                        preferenceUtils?.sharedPreferences?.getString(
-                            Constant.RECENT_POST, ""
-                        ), object : TypeToken<List<DataRecentPost>>() {}.type
-                    )
-                } catch (e: Exception) {
-                    RecentDesignFragment.objectList = arrayListOf()
-                }
-
-                RecentDesignFragment.objectList.add(DataRecentPost(file.absolutePath.toString()))
-
-                val postList = Gson().toJson(RecentDesignFragment.objectList)
-
-                preferenceUtils?.saveRecentPost(postList)
-            }
+//            if (isEdit) {
+//
+//                try {
+//                    RecentDesignFragment.objectList = Gson().fromJson(
+//                        preferenceUtils?.sharedPreferences?.getString(
+//                            Constant.RECENT_POST, ""
+//                        ), object : TypeToken<List<DataRecentPost>>() {}.type
+//                    )
+//                } catch (e: Exception) {
+//                    RecentDesignFragment.objectList = arrayListOf()
+//                }
+//
+//                RecentDesignFragment.objectList.add(DataRecentPost(file.absolutePath.toString()))
+//
+//                val postList = Gson().toJson(RecentDesignFragment.objectList)
+//
+//                preferenceUtils?.saveRecentPost(postList)
+//            }
 
             isEdit = false
 

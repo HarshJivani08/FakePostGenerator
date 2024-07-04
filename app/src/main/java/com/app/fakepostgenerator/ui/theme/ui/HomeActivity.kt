@@ -11,7 +11,6 @@ import com.app.fakepostgenerator.R
 import com.app.fakepostgenerator.databinding.ActivityHomeBinding
 
 import com.app.fakepostgenerator.ui.theme.app.BaseActivity
-import com.app.fakepostgenerator.ui.theme.app.QMakerApp
 import com.app.fakepostgenerator.ui.theme.ui.menu.MenuActivity
 import com.app.fakepostgenerator.ui.theme.ui.whatsapp.WhatsappChatActivity
 import com.tombayley.activitycircularreveal.CircularReveal
@@ -26,7 +25,7 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
         val view: View = binding.root
         setContentView(view)
 
-        initView()
+
         setClick()
     }
 
@@ -36,10 +35,6 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
         binding.lFacebookPost.setOnClickListener(this)
         binding.lWhatsAppChat.setOnClickListener(this)
         binding.lTweeterPost.setOnClickListener(this)
-    }
-
-    private fun initView() {
-
     }
 
     override fun onClick(v: View?) {
@@ -58,7 +53,7 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
                     )
                 }
                 CircularReveal.presentActivity(builder)
-//                QMakerApp.getAppInstance().
+//              QMakerApp.getAppInstance().
                 setAnimation(this,binding.imgMenu)
             }
             binding.lInstagramPost -> {
@@ -81,13 +76,11 @@ class HomeActivity : BaseActivity(), View.OnClickListener {
                startActivity(intent)
                setAnimation(this,binding.lWhatsAppChat)
             }
-
         }
     }
-    fun setAnimation(context: Context?, view: View) {
+    private fun setAnimation(context: Context?, view: View) {
 //        view.setAnimation(AnimationUtils.loadAnimation(context,R.anim.bounce));
         val clickAnimation = AnimationUtils.loadAnimation(context, R.anim.bounce)
         view.startAnimation(clickAnimation)
     }
-
 }
